@@ -1,4 +1,4 @@
-import '../../../src/App.css'
+
 import { Container } from './styles'
 
 export function Details() {
