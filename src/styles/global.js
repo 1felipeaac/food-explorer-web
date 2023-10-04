@@ -17,7 +17,33 @@ export default createGlobalStyle`
 
     body{
         background-color: ${({theme}) => theme.COLORS.DARK._400};
+        
         font-family: var(--ff-primary);
+        font-size: 1.6rem;
+
+        margin: 0 auto;
+
+        color: ${({theme}) => theme.COLORS.LIGHT._100};
     }
+
+    #pageLogin{
+        gap: clamp(10rem, 1rem + 20vw, 30rem);
+    }
+
+    @media screen and (max-width: 425px) {
+
+        #pageLogin{
+            display:  flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 3.2rem;
+        }
+
+        #subTitleLogin{
+            display: none;
+        }
+}
+
+
 
 `

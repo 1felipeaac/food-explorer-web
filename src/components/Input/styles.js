@@ -14,5 +14,8 @@ export const Container = styled.div`
     height: 4.8rem;
     border-radius: .8rem;
     padding: 1.4rem 1.6rem;
+
+    color: ${({ theme }) => theme.COLORS.LIGHT._400};
+
   }
 `;
