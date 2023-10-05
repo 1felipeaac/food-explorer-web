@@ -13,6 +13,7 @@ export default createGlobalStyle`
 
         --ff-primary: 'Poppins', sans-serif;
         --ff-secondary: 'Roboto', sans-serif;
+        --ff-footer: 'DM Sans', sans-serif;
     }
 
     body{
@@ -24,6 +25,20 @@ export default createGlobalStyle`
         margin: 0 auto;
 
         color: ${({theme}) => theme.COLORS.LIGHT._100};
+
+        border: 1px solid white;
+
+        height: 100vh;
+        width: 100vw;
+
+    }
+
+    #root{
+        display: flex;
+        justify-content: center;
+        min-width: 32rem;
+        width: 100vw;
+
     }
 
     #pageLogin{
