@@ -5,4 +5,7 @@ export const Container = styled.div`
   gap: 1rem;
   align-items: center;
   color: ${({ theme }) => theme.COLORS.LIGHT._100};
+  svg{
+    width: 2.4rem;
+  }
 `;

@@ -26,10 +26,13 @@ export default createGlobalStyle`
 
         color: ${({theme}) => theme.COLORS.LIGHT._100};
 
-        border: 1px solid white;
+        /* border: 1px solid white; */
 
         height: 100vh;
-        width: 100vw;
+        max-width: 112rem;
+
+        margin: 0 auto;
+        /* width: 100vw; */
 
     }
 
@@ -38,6 +41,8 @@ export default createGlobalStyle`
         justify-content: center;
         min-width: 32rem;
         width: 100vw;
+
+        border: 1px solid white;
 
     }
 
