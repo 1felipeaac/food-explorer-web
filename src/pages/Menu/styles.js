@@ -40,15 +40,6 @@ export const Container = styled.div`
 
 `
 
-export const Search = styled.input`
-    width: 100%;
-
-    height: 4.8rem;
-    background-color: ${({theme})=> theme.COLORS.DARK._900};
-    border: none;
-    color: ${({theme})=> theme.COLORS.LIGHT._500};
-`
-
 export const Header = styled.header`
     display: flex;
     align-items: center;

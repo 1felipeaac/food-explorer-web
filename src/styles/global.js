@@ -30,9 +30,7 @@ export default createGlobalStyle`
 
         height: 100vh;
         max-width: 112rem;
-
-        margin: 0 auto;
-        /* width: 100vw; */
+        width: 100%;
 
     }
 
@@ -40,14 +38,22 @@ export default createGlobalStyle`
         display: flex;
         justify-content: center;
         min-width: 32rem;
-        width: 100vw;
+        /* width: 100vw; */
 
-        border: 1px solid white;
+        /* border: 1px solid white; */
 
     }
 
     #pageLogin{
         gap: clamp(10rem, 1rem + 20vw, 30rem);
+    }
+
+    .desktop{
+        display: flex;
+    }
+
+    .mobile{
+        display: none;
     }
 
     @media screen and (max-width: 425px) {
@@ -61,6 +67,14 @@ export default createGlobalStyle`
 
         #subTitleLogin{
             display: none;
+        }
+
+        .desktop{
+            display: none;
+        }
+
+        .mobile{
+            display: flex;
         }
 }
 

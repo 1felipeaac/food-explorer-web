@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-no-undef */
 import { Container, Buttons } from "./styles";
-import { Logo } from "../Logo";
-import menu from '../../assets/menu.svg'
-import receipt from '../../assets/receipt.svg'
+import { Logo } from "../../Logo";
+import menu from '../../../assets/menu.svg'
+import receipt from '../../../assets/receipt.svg'
 
-export function Header(){
+export function HeaderMobile(){
 
     return(
-        <Container>
+        <Container className="mobile">
             <nav>
                 <Buttons id="buttonMenu">
                     <img src={menu} id="menu" alt="icon menu" />

@@ -11,8 +11,9 @@ export const Container = styled.div`
 
     #banner{
         background: linear-gradient(200deg, rgba(2,0,36,1) 0%, rgba(9,30,38,1) 35%);
+        /* width: fit-content; */
 
-        width: clamp(37.5rem, 100% + 80vw , 112rem);
+        width: clamp(31.5rem, 20% + 80vw , 112rem);
         height: 12rem;
         margin-top: 2.4rem;
         z-index: -1;
@@ -25,7 +26,7 @@ export const Container = styled.div`
         top: 12rem;
         
     }
-    span{
+    #presentation{
 
         position: absolute;
         right: 0;
