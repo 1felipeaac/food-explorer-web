@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import {Details} from './pages/Details'
-// import {SignIn} from './pages/SignIn'
-// import {Menu} from './pages/Menu'
-import {Home} from './pages/Home'
+import { Routes } from './routes'
 import GlobalStyles from './styles/global'
 import { ThemeProvider } from 'styled-components'
 
@@ -13,10 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
-      {/* <Menu title={"Sair"} /> */}
-      {/* <SignIn /> */}
-      {/* <Details /> */}
-      <Home/>
+        <Routes/>
     </ThemeProvider>
   </React.StrictMode>,
 )

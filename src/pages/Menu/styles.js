@@ -1,64 +1,61 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
 
+  width: 100vw;
+  height: 100vh;
+
+  > main {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 3.6rem;
 
-    width: 100vw;
-    height: 100vh;
+    /* max-width: 42.5rem; */
 
-    > main{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 3.6rem;
+    margin: 3.6rem 2.8rem;
 
-        margin: 3.6rem 2.8rem;
+    span {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: ${({ theme }) => theme.COLORS.DARK._900};
 
-        span{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            background-color: ${({theme})=> theme.COLORS.DARK._900};
-
-            img{
-                /* background-color: ${({theme})=> theme.COLORS.DARK._900}; */
-                padding: 1.2rem 1.4rem;
-            }
-        }
-
-        a{
-            color: ${({theme})=> theme.COLORS.LIGHT._300};
-            font-size: 2.4rem;
-            line-height: 140%;
-        }
-
+      img {
+        /* background-color: ${({ theme }) => theme.COLORS.DARK._900}; */
+        padding: 1.2rem 1.4rem;
+      }
     }
 
-
-
-`
+    a {
+      color: ${({ theme }) => theme.COLORS.LIGHT._300};
+      font-size: 2.4rem;
+      font-weight: lighter;
+      line-height: 140%;
+    }
+  }
+`;
 
 export const Header = styled.header`
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
 
-    background-color: ${({theme})=> theme.COLORS.DARK._700};
+  background-color: ${({ theme }) => theme.COLORS.DARK._700};
 
-    height: 11.4rem;
-    padding: 5.6rem 2.8rem 2.4rem;
+  height: 11.4rem;
+  padding: 5.6rem 2.8rem 2.4rem;
 
-    >img{
-        height: 1.8rem;
-        width: 1.8rem;
-    }
+  > img {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
 
-    >h1{
-        font-family: var(--ff-secondary);
-        font-size: 2.1rem;
-        font-weight: normal;
-    }
-
-`
+  > h1 {
+    font-family: var(--ff-secondary);
+    font-size: 2.1rem;
+    font-weight: normal;
+  }
+`;

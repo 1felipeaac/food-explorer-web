@@ -16,6 +16,54 @@ export function Home(){
                 <h3>Sabores inigualáveis</h3>
                 <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
             </span>
+            <main>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                <h1>
+                    <span>Sabores inigualáveis</span>
+                </h1>
+                
+            </main>
     
             <Footer/>
         </Container>

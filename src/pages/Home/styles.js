@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     justify-content: right;
 
     position: relative;
@@ -14,7 +14,7 @@ export const Container = styled.div`
         /* width: fit-content; */
 
         width: clamp(31.5rem, 20% + 80vw , 112rem);
-        height: 12rem;
+        /* height: 26rem; */
         margin-top: 2.4rem;
         z-index: -1;
 
@@ -30,16 +30,18 @@ export const Container = styled.div`
 
         position: absolute;
         right: 0;
-        top: 12rem;
+        
         z-index: 1;
-        max-width: 20rem;
 
         padding-top: 4.5rem;
-        margin-right: 3rem;
 
         p{
             font-size: 1.2rem;
         }
+    }
+
+    main{
+        /* height: 100%; */
     }
 
 `
