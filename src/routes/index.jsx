@@ -5,6 +5,7 @@ import { AuthRoutes } from "./auth.routes";
 
 import { useAuth } from "../hooks/auth";
 import { CostumerRoutes } from "./costumer.routes";
+import { AdminRoutes } from "./admin.routes";
 import { USER_ROLE } from "../utils/roles";
 // import { useEffect } from "react";
 
@@ -14,7 +15,7 @@ export function Routes(){
     function AccessRoute(){
         switch(user.role){
             case USER_ROLE.ADMIN:
-                return "Rotas do Admin em construção"
+                return <AdminRoutes/>
             default:
                 return <CostumerRoutes/>
         }

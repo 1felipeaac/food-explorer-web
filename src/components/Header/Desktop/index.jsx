@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import { Logo } from "../../Logo";
-import receipt from "../../../assets/receipt.svg";
-import search from "../../../assets/search.svg";
+// import receipt from "../../../assets/receipt.svg";
+// import search from "../../../assets/search.svg";
 import exit from "../../../assets/exit.svg";
 import { Search } from "../../Search";
 import { Button } from "../../Button";

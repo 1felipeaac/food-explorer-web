@@ -5,18 +5,25 @@ import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";
 
 // import { api } from "../../services/api";
+// import { useEffect, useState } from "react";
 
 export function Home() {
-
-    // try {
-    //     const teste = await api.get("/dishes")
+  // const [dishes, setDishes] = useState([])
     
-    //     console.log(teste)
+  // useEffect(() => {
+  //   async function fetchDishes(){
+  //     try {
+  //       const response = await api.get("/dishes")
+  //       setDishes(response.data)
+  //       console.log(dishes)
         
-    // } catch (error) {
-    //     console.log(error.message)
-    // }
+  //     } catch (error) {
+  //       console.error(error.message)
+  //     }
+  //   }
 
+  //   fetchDishes()
+  // },[])
   return (
     <Container>
       <HeaderDesktop />
@@ -30,9 +37,15 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </span>
         </div>
-        
       </main>
-
+      {/* {dishes && dishes.map((dish) => 
+        <div key={dish.id}>
+          {dish.name}
+          {dish.category}
+          {dish.description}
+          {dish.value}
+        </div>)
+      } */}
       <Footer />
     </Container>
   );
