@@ -4,7 +4,19 @@ import { Footer } from "../../Components/Footer";
 import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";
 
+// import { api } from "../../services/api";
+
 export function Home() {
+
+    // try {
+    //     const teste = await api.get("/dishes")
+    
+    //     console.log(teste)
+        
+    // } catch (error) {
+    //     console.log(error.message)
+    // }
+
   return (
     <Container>
       <HeaderDesktop />
@@ -18,54 +30,7 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </span>
         </div>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
-        <h1>
-          <span>Sabores inigualáveis</span>
-        </h1>
+        
       </main>
 
       <Footer />

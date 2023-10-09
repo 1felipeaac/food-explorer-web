@@ -12,4 +12,6 @@ export const Container = styled.button`
     height: 4.8rem;
 
     border-radius: .5rem;
+
+    cursor: pointer;
 `

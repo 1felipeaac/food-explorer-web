@@ -34,6 +34,18 @@ export default createGlobalStyle`
 
     }
 
+    a{
+        text-decoration: none;
+    }
+
+    button, a {
+        cursor: pointer;
+        transition: --ff-primary 0.2s;
+    }
+    button:hover, a:hover {
+        filter: brightness(0.9)
+    }
+
     #root{
         display: flex;
         justify-content: center;

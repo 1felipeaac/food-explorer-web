@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Container } from "./styles";
 
-export function Hyperlink({title}){
+export function Hyperlink({title, to}){
     return(
-        <Container>
+        <Container to={to}>
             {title}
         </Container>
     )
