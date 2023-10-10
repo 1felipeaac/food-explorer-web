@@ -1,29 +1,35 @@
 import { HeaderMobile } from "../../components/Header/Mobile";
 import { HeaderDesktop } from "../../components/Header/Desktop";
 import { Footer } from "../../Components/Footer";
+import { CardDish } from "../../components/CardDish";
 import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";
 
-// import { api } from "../../services/api";
-// import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../hooks/auth";
 
 export function Home() {
+  const [data, setData] = useState([]);
   // const [dishes, setDishes] = useState([])
-    
-  // useEffect(() => {
-  //   async function fetchDishes(){
-  //     try {
-  //       const response = await api.get("/dishes")
-  //       setDishes(response.data)
-  //       console.log(dishes)
-        
-  //     } catch (error) {
-  //       console.error(error.message)
-  //     }
-  //   }
+  const logged = useAuth();
+  const role = logged.user.role;
 
-  //   fetchDishes()
-  // },[])
+  const dishes = data.dishes;
+
+  // if(dishes !== undefined) {
+  //   dishes.map(dish => console.log(dish))
+
+  // }
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get("/dishes");
+      setData(response.data);
+    }
+
+    fetchDishes();
+  }, []);
   return (
     <Container>
       <HeaderDesktop />
@@ -38,14 +44,10 @@ export function Home() {
           </span>
         </div>
       </main>
-      {/* {dishes && dishes.map((dish) => 
-        <div key={dish.id}>
-          {dish.name}
-          {dish.category}
-          {dish.description}
-          {dish.value}
-        </div>)
-      } */}
+      {dishes &&
+        dishes.map((dish) => (
+          <CardDish key={dish.id} name={dish.name} price={dish.value}/>
+        ))}
       <Footer />
     </Container>
   );
