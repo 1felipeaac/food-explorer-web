@@ -6,7 +6,11 @@ import exit from "../../../assets/exit.svg";
 import { Search } from "../../Search";
 import { Button } from "../../Button";
 
+import { useAuth } from "../../../hooks/auth"
+
+
 export function HeaderDesktop() {
+
   const iconReceipt = (
     <svg
       width="27"
@@ -36,13 +40,18 @@ export function HeaderDesktop() {
     </svg>
   );
 
+  const {signOut} = useAuth()
+
+
   return (
     <Container className="desktop">
       <nav>
         <Logo />
         <Search />
         <Button title={"Pedidos"} icon={iconReceipt} />
-        <img src={exit} alt="icon exit" />
+        <button id="exit" onClick={signOut}>
+          <img src={exit} alt="icon exit" />
+        </button>
       </nav>
     </Container>
   );

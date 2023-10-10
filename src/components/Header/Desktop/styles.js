@@ -34,5 +34,10 @@ export const Container = styled.header`
             width: 2.4rem;
         }
     }
+
+    #exit{
+      background: none;
+      border: none;
+    }
   }
 `;

@@ -18,6 +18,8 @@ function AuthProvider({children}){
 
             const {user, token} = response.data
 
+            // user.remove(password)
+
             console.log(user)
 
             localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
