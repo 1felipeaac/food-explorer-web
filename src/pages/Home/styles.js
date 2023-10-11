@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
   display: flex;
@@ -23,6 +24,8 @@ export const Container = styled.div`
     margin-bottom: 3rem;
 
     width: 100%;
+    height: 100vh;
+
     overflow: auto;
 
     #display {
@@ -70,7 +73,10 @@ export const Container = styled.div`
       align-items: center;
       justify-content: space-evenly;
       width: 100%;
-      height: 100vh;
     }
+  }
+
+  @media(max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    
   }
 `;

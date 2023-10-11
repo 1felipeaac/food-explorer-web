@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
     height: 100vh;
@@ -20,6 +21,23 @@ export const Container = styled.div`
 
         min-width: 27rem;
 
+    }
+
+    #pageLogin{
+        gap: clamp(10rem, 1rem + 20vw, 30rem);
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        #pageLogin{
+            display:  flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 3.2rem;
+            }
+
+            #subTitleLogin{
+                display: none;
+            }
     }
 
 `

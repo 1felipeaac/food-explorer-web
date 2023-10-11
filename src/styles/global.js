@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { DEVICE_BREAKPOINTS } from "./deviceBreakPoints";
 
 export default createGlobalStyle`
     *{
@@ -9,18 +10,67 @@ export default createGlobalStyle`
     :root{
         display: grid;
 
-        font-size: 62.5%;
+        font-size: 16px;
 
         --ff-primary: 'Poppins', sans-serif;
         --ff-secondary: 'Roboto', sans-serif;
         --ff-footer: 'DM Sans', sans-serif;
+
+        @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+            
+            font-size: 12px;
+            
+            /* #pageLogin{
+            display:  flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 3.2rem;
+            }
+
+            #subTitleLogin{
+                display: none;
+            } */
+
+            .desktop{
+                display: none;
+            }
+
+            .mobile{
+                display: flex;
+            }
+
+            #banner{
+                height: 12rem;
+
+            }
+            #imgHome{
+                height: 14.8rem;
+            }
+            #presentation{
+                top: 12rem;
+                max-width: 20rem;
+                margin-right: 3rem;
+
+                >h3{
+                    font-size: 1.8rem;
+                    font-weight: 600; //semibold
+                }
+                
+                >p{
+                    font-size: 1.2rem;
+                    font-weight: 400; //regular
+                }
+            }
+        }
+
+        
     }
 
     body{
         background-color: ${({ theme }) => theme.COLORS.DARK._400};
         
         font-family: var(--ff-primary);
-        font-size: 1.6rem;
+        font-size: 1rem;
 
         margin: 0 auto;
 
@@ -57,9 +107,9 @@ export default createGlobalStyle`
 
     }
 
-    #pageLogin{
+    /* #pageLogin{
         gap: clamp(10rem, 1rem + 20vw, 30rem);
-    }
+    } */
 
     .desktop{
         display: flex;
@@ -95,7 +145,7 @@ export default createGlobalStyle`
         
     }
 
-    @media screen and (max-width: 425px) {
+    /* @media screen and (max-width: ${DEVICE_BREAKPOINTS.MD}) {
 
         #pageLogin{
             display:  flex;
@@ -138,7 +188,7 @@ export default createGlobalStyle`
                 font-weight: 400; //regular
             }
         }
-}
+} */
 
 
 
