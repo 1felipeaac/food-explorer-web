@@ -7,20 +7,15 @@ import home from "../../assets/homeImg.svg";
 
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../hooks/auth";
+// import { useAuth } from "../../hooks/auth";
 
 export function Home() {
   const [data, setData] = useState([]);
   // const [dishes, setDishes] = useState([])
-  const logged = useAuth();
-  const role = logged.user.role;
+  // const logged = useAuth();
+  // const role = logged.user.role;
 
   const dishes = data.dishes;
-
-  // if(dishes !== undefined) {
-  //   dishes.map(dish => console.log(dish))
-
-  // }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -43,11 +38,17 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </span>
         </div>
+        <div id="showDishes">
+          {dishes &&
+            dishes.map((dish) => 
+              {if(dish.category === 'café da manhã'){
+                  return (
+                    <CardDish key={dish.id} name={dish.name} price={dish.value} />
+                  )
+              }}
+          )}
+        </div>
       </main>
-      {dishes &&
-        dishes.map((dish) => (
-          <CardDish key={dish.id} name={dish.name} price={dish.value}/>
-        ))}
       <Footer />
     </Container>
   );

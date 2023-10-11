@@ -53,6 +53,7 @@ export default createGlobalStyle`
         /* width: 100vw; */
 
         /* border: 1px solid white; */
+        
 
     }
 

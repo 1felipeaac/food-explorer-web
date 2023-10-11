@@ -23,7 +23,7 @@ export const Container = styled.div`
     margin-bottom: 3rem;
 
     width: 100%;
-    overflow-y: auto;
+    overflow: auto;
 
     #display {
       display: flex;
@@ -63,6 +63,14 @@ export const Container = styled.div`
           font-size: 1.2rem;
         }
       }
+    }
+
+    #showDishes{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100vh;
     }
   }
 `;

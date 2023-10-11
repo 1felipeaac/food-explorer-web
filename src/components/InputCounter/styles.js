@@ -2,15 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  input[type="number"] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
+  
+  div{
+    margin: 0 2rem;
   }
 
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
+  #minun, #plus {
+    border: none;
+    background: none;
 
+    display: flex;
+    align-items: center;
+  }
+    
 `;
