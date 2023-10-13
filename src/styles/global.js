@@ -19,51 +19,8 @@ export default createGlobalStyle`
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
             
             font-size: 12px;
-            
-            /* #pageLogin{
-            display:  flex;
-            justify-content: center;
-            flex-direction: column;
-            gap: 3.2rem;
-            }
-
-            #subTitleLogin{
-                display: none;
-            } */
-
-            .desktop{
-                display: none;
-            }
-
-            .mobile{
-                display: flex;
-            }
-
-            #banner{
-                height: 12rem;
-
-            }
-            #imgHome{
-                height: 14.8rem;
-            }
-            #presentation{
-                top: 12rem;
-                max-width: 20rem;
-                margin-right: 3rem;
-
-                >h3{
-                    font-size: 1.8rem;
-                    font-weight: 600; //semibold
-                }
-                
-                >p{
-                    font-size: 1.2rem;
-                    font-weight: 400; //regular
-                }
-            }
         }
-
-        
+ 
     }
 
     body{
@@ -100,96 +57,7 @@ export default createGlobalStyle`
         display: flex;
         justify-content: center;
         min-width: 32rem;
-        /* width: 100vw; */
-
-        /* border: 1px solid white; */
-        
-
+        /* background-color: ${({ theme }) => theme.COLORS.DARK._400}; */
     }
-
-    /* #pageLogin{
-        gap: clamp(10rem, 1rem + 20vw, 30rem);
-    } */
-
-    .desktop{
-        display: flex;
-    }
-
-    .mobile{
-        display: none;
-    }
-
-    #banner{
-        height: 26rem;
-        margin-top: 16.4rem;
-    }
-
-    #imgHome{
-        /* width: 63.2rem; */
-        height: 29rem;
-    }
-
-    #presentation{
-        top: 20rem;
-        margin-right: 10rem;
-
-        >h3{
-                font-size: 1.8rem;
-                font-weight: 500; //medium
-        }
-        
-        >p{
-            font-size: 1.2rem;
-            font-weight: 400; //regular
-        }
-        
-    }
-
-    /* @media screen and (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-
-        #pageLogin{
-            display:  flex;
-            justify-content: center;
-            flex-direction: column;
-            gap: 3.2rem;
-        }
-
-        #subTitleLogin{
-            display: none;
-        }
-
-        .desktop{
-            display: none;
-        }
-
-        .mobile{
-            display: flex;
-        }
-
-        #banner{
-            height: 12rem;
-
-        }
-        #imgHome{
-            height: 14.8rem;
-        }
-        #presentation{
-            top: 12rem;
-            max-width: 20rem;
-            margin-right: 3rem;
-
-            >h3{
-                font-size: 1.8rem;
-                font-weight: 600; //semibold
-            }
-            
-            >p{
-                font-size: 1.2rem;
-                font-weight: 400; //regular
-            }
-        }
-} */
-
-
 
 `;

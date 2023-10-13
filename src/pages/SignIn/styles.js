@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
+
 
 export const Container = styled.div`
     height: 100vh;
@@ -27,18 +28,20 @@ export const Container = styled.div`
         gap: clamp(10rem, 1rem + 20vw, 30rem);
     }
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
-        #pageLogin{
-            display:  flex;
-            justify-content: center;
-            flex-direction: column;
-            gap: 3.2rem;
-            }
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        /* background-color: white; */
+        flex-direction: column;
+        justify-content: center;
 
-            #subTitleLogin{
-                display: none;
-            }
+        #formLogin {
+            margin-top: 7.3rem;
+        }
+
+        #subTitleLogin {
+            display: none;
+        }
     }
 
+    
 `
 

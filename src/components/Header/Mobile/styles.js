@@ -5,6 +5,8 @@ export const Container = styled.header`
     justify-content: center;
     max-width: 112rem;
     width: 100vw;
+    background-color: ${({theme})=> theme.COLORS.DARK._700};
+
     /* position: absolute;
     top: 0;
     left: 0; */

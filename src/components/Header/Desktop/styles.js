@@ -6,6 +6,8 @@ export const Container = styled.header`
   max-width: 112rem;
   width: 100vw;
 
+  background-color: ${({theme})=> theme.COLORS.DARK._700};
+
   > nav {
     padding: 5.6rem 1rem 2.4rem;
     display: flex;
