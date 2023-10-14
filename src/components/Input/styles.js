@@ -6,14 +6,12 @@ export const Container = styled.div`
   justify-content: space-between;
   color: ${({ theme }) => theme.COLORS.LIGHT._400};
 
-  /* min-width: 20rem; */
-
   > input {
     background-color: ${({ theme }) => theme.COLORS.DARK._900};
     border: none;
-    height: 4.8rem;
-    border-radius: .8rem;
-    padding: 1.4rem 1.6rem;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 1rem .8rem;
 
     color: ${({ theme }) => theme.COLORS.LIGHT._400};
 

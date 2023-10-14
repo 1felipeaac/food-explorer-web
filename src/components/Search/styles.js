@@ -6,21 +6,17 @@ export const Container = styled.span`
   align-items: center;
   background-color: ${({ theme }) => theme.COLORS.DARK._900};
 
-  img {
-    padding: 1.2rem 1.4rem;
-  }
+  border-radius: 5px;
 
-  a {
-    color: ${({ theme }) => theme.COLORS.LIGHT._300};
-    font-size: 2.4rem;
-    line-height: 140%;
+  img {
+    padding: 1.15rem;
   }
 `;
 
 export const InputSearch = styled.input`
     width: 100%;
-
-    height: 4.8rem;
+    max-width: 21.5rem;
+    height: 3rem;
     background-color: ${({theme})=> theme.COLORS.DARK._900};
     border: none;
     color: ${({theme})=> theme.COLORS.LIGHT._500};

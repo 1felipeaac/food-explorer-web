@@ -1,6 +1,6 @@
 import { HeaderMobile } from "../../components/Header/Mobile";
 import { HeaderDesktop } from "../../components/Header/Desktop";
-import { Footer } from "../../Components/Footer";
+import { Footer } from "../../components/Footer";
 import { CardDish } from "../../components/CardDish";
 import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";

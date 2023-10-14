@@ -5,13 +5,14 @@ export const Container = styled.button`
 
     border:  none;
 
+    /* max-width: 13.5rem; */
     width: 100%;
 
     color: ${({theme})=> theme.COLORS.LIGHT._100};
 
-    height: 4.8rem;
+    height: 3.5rem;
 
-    border-radius: .5rem;
+    border-radius: 5px;
 
     cursor: pointer;
 `

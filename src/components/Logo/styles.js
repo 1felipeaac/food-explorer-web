@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.65rem;
   align-items: center;
+  max-width: 16rem;
+  width: 100%;
   color: ${({ theme }) => theme.COLORS.LIGHT._100};
   svg{
-    width: 2.4rem;
+    width: 1.85rem;
+  }
+
+  h1{
+    font-weight: bolder;
   }
 `;

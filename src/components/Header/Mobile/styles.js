@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.header`
     display: flex;
     justify-content: center;
-    max-width: 112rem;
+    max-width: 70rem;
     width: 100vw;
     background-color: ${({theme})=> theme.COLORS.DARK._700};
 
@@ -11,12 +11,11 @@ export const Container = styled.header`
     top: 0;
     left: 0; */
     > nav{
-        padding: 5.6rem 1rem 2.4rem;
+        padding: 3.5rem 1.75rem 1.5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        
     }
 `
 

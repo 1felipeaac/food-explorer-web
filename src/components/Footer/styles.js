@@ -4,16 +4,13 @@ export const Container = styled.footer`
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-around;
 
     bottom: 0;
-    /* left: 0; */
     position: absolute;
     text-align: center;
 
-    height: 7.7rem;
-    max-width: 112rem;
+    height: 4.8rem;
     width: 100%;
 
     padding: 0 1rem;
@@ -21,11 +18,7 @@ export const Container = styled.footer`
     background-color: ${({theme})=> theme.COLORS.DARK._600};
     > div {
 
-        gap: 0;
-
         svg{
-            width: 2.2rem;
-            height: 1.8rem;
             path{
                 fill: ${({theme})=> theme.COLORS.LIGHT._700};
             }
@@ -41,8 +34,8 @@ export const Container = styled.footer`
 
     > h3{
         font-family: var(--ff-footer);
-        font-size: 1.2rem;
+        /* font-size: 1.2rem; */
+        font-weight: 200;
         color: ${({theme})=> theme.COLORS.LIGHT._200};
-
     }
 `

@@ -9,7 +9,7 @@ export const Container = styled.header`
   background-color: ${({theme})=> theme.COLORS.DARK._700};
 
   > nav {
-    padding: 5.6rem 1rem 2.4rem;
+    padding: 1.75rem 7.7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,11 +17,11 @@ export const Container = styled.header`
     width: 100%;
 
     div{
-        min-width: 20rem;
+        min-width: 12.5rem;
     }
 
     span{
-        max-width: 58.3rem;
+        /* max-width: 58.3rem; */
         justify-content: center;
     }
 
@@ -30,10 +30,10 @@ export const Container = styled.header`
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 0.5rem;
 
         svg{
-            width: 2.4rem;
+            width: 1.6rem;
         }
     }
 
