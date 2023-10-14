@@ -47,8 +47,8 @@ export function Home() {
                   )
               }}
           )}
-        {/* </div>
-        <div>
+        </div>
+        {/* <div>
           {dishes &&
             dishes.map((dish) => 
               {if(dish.category === 'café da manhã'){
@@ -56,8 +56,8 @@ export function Home() {
                     <CardDish key={dish.id} name={dish.name} price={dish.value} />
                   )
               }}
-          )} */}
-        </div>
+          )}
+        </div> */}
       </main>
       <Footer />
     </Container>

@@ -13,13 +13,14 @@ export const Container = styled.div`
   --banner-height: 16rem;
   overflow: auto;
 
-
   header {
     position: fixed;
     z-index: 2;
   }
 
   main {
+    /* overflow: auto; */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +29,7 @@ export const Container = styled.div`
     margin-bottom: 3rem;
 
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 
     .desktop {
       display: flex;
@@ -54,19 +55,19 @@ export const Container = styled.div`
 
         border-radius: 8px;
 
-        width: clamp(32rem, 25% + 90vw, 112rem);
+        width: clamp(20rem, 25% + 90vw, 70rem);
         z-index: -1;
       }
 
       #imgHome {
         position: absolute;
         left: 0;
-        top: 10rem;
-        height: calc(var(--banner-height) + 9.75rem);
+        /* top: 13.7rem; */
+        height: calc(var(--banner-height) + 6rem);
       }
       #presentation {
         position: absolute;
-        right: clamp(.3rem, 1rem + 5vw, 6.25rem);
+        right: clamp(0.3rem, 1rem + 5vw, 6rem);
         z-index: 1;
 
         > p {
@@ -101,6 +102,10 @@ export const Container = styled.div`
     #display {
       margin-top: 10.25rem;
 
+      #imgHome {
+        top: 13.7rem;
+      }
+
       #presentation {
         padding-top: 4.5rem;
         top: 20rem;
@@ -117,11 +122,18 @@ export const Container = styled.div`
       display: flex;
     }
 
+    #imgHome {
+      top: 13.7rem;
+    }
+
     .mobile {
       display: none;
     }
     #display {
       margin-top: 10.25rem;
+      #imgHome {
+        top: 13.7rem;
+      }
 
       #presentation {
         padding-top: 4.5rem;
@@ -149,6 +161,7 @@ export const Container = styled.div`
         max-height: 12rem;
       }
       #imgHome {
+        top: 10rem;
         max-height: 14.3rem;
       }
       #presentation {

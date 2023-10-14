@@ -16,6 +16,13 @@ export const Container = styled.header`
         align-items: center;
         justify-content: space-between;
         width: 100%;
+
+        div{
+            justify-content: center;
+            p{
+                color: ${({theme})=> theme.COLORS.TINTS.CAKE_200};
+            }
+        }
     }
 `
 
