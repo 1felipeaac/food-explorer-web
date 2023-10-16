@@ -6,19 +6,18 @@ export const Container = styled.header`
     max-width: 70rem;
     width: 100vw;
     background-color: ${({theme})=> theme.COLORS.DARK._700};
-
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     > nav{
         padding: 3.5rem 1.75rem 1.5rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
 
         div{
             justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
             p{
                 color: ${({theme})=> theme.COLORS.TINTS.CAKE_200};
             }

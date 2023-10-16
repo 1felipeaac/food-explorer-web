@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-undef */
 import { Container, Header } from "./styles";
-import { Hyperlink } from "../../Components/Hyperlink";
-import { Footer } from "../../Components/Footer";
+import { Hyperlink } from "../Hyperlink";
+import { Footer } from "../Footer";
 import buttonClose from "../../assets/close.svg";
 import { Link } from "react-router-dom";
-import { Search } from "../../components/Search";
+import { Search } from "../Search";
 
 import { useAuth } from "../../hooks/auth"
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,9 @@ import { useNavigate } from "react-router-dom";
 export function Menu({ title: name }) {
   const {signOut} = useAuth()
   const navigate = useNavigate()
+
+  const logged = useAuth();
+  const role = logged.user.role;
 
   function logOut(){
     signOut()
@@ -29,6 +32,7 @@ export function Menu({ title: name }) {
       </Header>
       <main>
         <Search />
+        {role === "admin" ? <Hyperlink title={"Novo prato"} to={"/newDish"}/> : null}
         {name && <Hyperlink onClick={logOut} title={name} />}
       </main>
       <Footer />

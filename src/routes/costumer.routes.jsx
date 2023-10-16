@@ -1,7 +1,7 @@
 import {Route, Routes} from 'react-router-dom'
 
 import {Home} from '../pages/Home'
-import {Menu} from '../pages/Menu'
+import {Menu} from '../../src/Components/MobileMenu'
 import { NotFound } from '../pages/NotFound'
 
 export function CostumerRoutes(){

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.span`
+  max-width: 30rem;
   width: 100%;
   display: flex;
   align-items: center;

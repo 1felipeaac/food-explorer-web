@@ -2,14 +2,23 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  gap: 0.65rem;
-  align-items: center;
-  /* justify-content: center; */
-  /* max-width: 16rem; */
+  /* gap: 0.65rem; */
+ 
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-around;
+  max-width: 16rem;
   width: 100%;
   color: ${({ theme }) => theme.COLORS.LIGHT._100};
+
   svg{
     width: 1.85rem;
+  }
+
+  span{
+    gap: 0.65rem;
+    display: flex;
+    align-items: center;
   }
 
   h1{

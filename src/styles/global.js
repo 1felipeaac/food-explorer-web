@@ -19,6 +19,13 @@ export default createGlobalStyle`
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
             
             font-size: 12px;
+
+            .desktop {
+                display: none;
+            }
+            .mobile {
+                display: flex;
+            }
         }
  
     }
@@ -43,6 +50,7 @@ export default createGlobalStyle`
 
     a{
         text-decoration: none;
+        color: ${({ theme }) => theme.COLORS.LIGHT._100};
     }
 
     button, a {
@@ -58,6 +66,14 @@ export default createGlobalStyle`
         justify-content: center;
         min-width: 20rem;
         /* background-color: ${({ theme }) => theme.COLORS.DARK._400}; */
+    }
+
+    .desktop {
+      display: flex;
+    }
+
+    .mobile {
+      display: none;
     }
 
 `;

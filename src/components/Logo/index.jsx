@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Container } from "./styles";
 // import polygon from "../../assets/polygon.svg";
 
@@ -7,8 +8,10 @@ export function Logo({role}){
     </svg>  
     return(
         <Container>
-            {polygon}
-            <h1>food explorer</h1>
+            <span>
+                {polygon}
+                <h1>food explorer</h1>
+            </span>
             <p>{role}</p>
         </Container>
     )

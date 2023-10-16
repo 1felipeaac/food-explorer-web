@@ -19,7 +19,6 @@ export const Container = styled.div`
   }
 
   main {
-    /* overflow: auto; */
 
     display: flex;
     flex-direction: column;
@@ -29,15 +28,6 @@ export const Container = styled.div`
     margin-bottom: 3rem;
 
     width: 100%;
-    /* height: 100vh; */
-
-    .desktop {
-      display: flex;
-    }
-
-    .mobile {
-      display: none;
-    }
 
     #display {
       display: flex;
@@ -92,13 +82,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.XG}) {
-    .desktop {
-      display: flex;
-    }
-
-    .mobile {
-      display: none;
-    }
     #display {
       margin-top: 10.25rem;
 
@@ -118,17 +101,11 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XG}) {
-    .desktop {
-      display: flex;
-    }
 
     #imgHome {
       top: 13.7rem;
     }
 
-    .mobile {
-      display: none;
-    }
     #display {
       margin-top: 10.25rem;
       #imgHome {
@@ -147,13 +124,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    .desktop {
-      display: none;
-    }
-
-    .mobile {
-      display: flex;
-    }
 
     #display {
       margin-top: 2.75rem;

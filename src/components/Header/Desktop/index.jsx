@@ -1,7 +1,5 @@
 import { Container } from "./styles";
 import { Logo } from "../../Logo";
-// import receipt from "../../../assets/receipt.svg";
-// import search from "../../../assets/search.svg";
 import exit from "../../../assets/exit.svg";
 import { Search } from "../../Search";
 import { Button } from "../../Button";
@@ -10,6 +8,9 @@ import { useAuth } from "../../../hooks/auth"
 
 
 export function HeaderDesktop() {
+
+  const logged = useAuth();
+  const role = logged.user.role;
 
   const iconReceipt = (
     <svg
@@ -46,9 +47,10 @@ export function HeaderDesktop() {
   return (
     <Container className="desktop">
       <nav>
-        <Logo />
+        {role === "admin" ? (<Logo role={role}/>) : <Logo/>}
         <Search />
-        <Button title={"Pedidos"} icon={iconReceipt} />
+        {role !== "admin" ? (<Button title={"Pedidos"} icon={iconReceipt} />) : <Button title={"Novo Prato"} toPage={"/newDish"}/>}
+        {/* <Button title={"Pedidos"} icon={iconReceipt} /> */}
         <button id="exit" onClick={signOut}>
           <img src={exit} alt="icon exit" />
         </button>

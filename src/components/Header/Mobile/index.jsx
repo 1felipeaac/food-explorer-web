@@ -5,7 +5,6 @@ import menu from "../../../assets/menu.svg";
 import receipt from "../../../assets/receipt.svg";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../hooks/auth";
-import { useEffect } from "react";
   
 
 
@@ -22,9 +21,16 @@ export function HeaderMobile() {
           </Buttons>
         </Link>
         {role === "admin" ? (<Logo role={role}/>) : <Logo/>}
-        <Buttons id="buttonReceipt">
-          <img src={receipt} id="receipt" alt="icon receipt" />
-        </Buttons>
+        {role === "costumer" ? 
+          (
+            <Buttons id="buttonReceipt">
+              <img src={receipt} id="receipt" alt="icon receipt" />
+            </Buttons>
+          ) : null
+        }
+      {/* <Buttons id="buttonReceipt">
+        <img src={receipt} id="receipt" alt="icon receipt" />
+      </Buttons> */}
       </nav>
     </Container>
   );

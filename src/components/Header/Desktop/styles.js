@@ -2,22 +2,38 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   display: flex;
-  /* justify-content: center; */
-  max-width: 112rem;
-  width: 100vw;
+  justify-content: center;
+  /* max-width: 112rem; */
+  width: 100%;
 
   background-color: ${({theme})=> theme.COLORS.DARK._700};
 
+
   > nav {
+
     padding: 1.75rem 7.7rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: space-evenly;
+    max-width: 112rem;
     width: 100%;
 
+    gap: 2rem;
+
     div{
-        min-width: 12.5rem;
+        /* max-width: 15rem; */
+        /* flex-wrap: wrap;
+        justify-content: flex-end; */
+        /* align-items: flex-end; */
+        align-items: self-end;
+
+        span{
+          padding: 0;
+          min-width: 12.5rem;
+        }
+        p{
+          color: ${({theme})=> theme.COLORS.TINTS.CAKE_200};
+        }
     }
 
     span{
