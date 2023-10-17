@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-undef */
 import { Container, Header } from "./styles";
-import { Hyperlink } from "../Hyperlink";
 import { Footer } from "../Footer";
 import buttonClose from "../../assets/close.svg";
 import { Link } from "react-router-dom";
 import { Search } from "../Search";
-
 import { useAuth } from "../../hooks/auth"
 import { useNavigate } from "react-router-dom";
+import { Hyperlink } from "../Hyperlink";
 
 export function Menu({ title: name }) {
   const {signOut} = useAuth()

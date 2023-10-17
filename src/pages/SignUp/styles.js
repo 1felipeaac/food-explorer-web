@@ -7,6 +7,8 @@ export const Container = styled.div`
 
   display: flex;
   gap: clamp(1rem, 1rem + 50vw, 19rem);
+  align-items: center;
+
 
   > #formLogin {
     display: flex;

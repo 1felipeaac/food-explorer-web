@@ -45,6 +45,8 @@ export default createGlobalStyle`
         /* height: 100vh; */
         max-width: 70rem;
         width: 100%;
+        height: 100%;
+
 
     }
 
@@ -65,6 +67,7 @@ export default createGlobalStyle`
         display: flex;
         justify-content: center;
         min-width: 20rem;
+
         /* background-color: ${({ theme }) => theme.COLORS.DARK._400}; */
     }
 

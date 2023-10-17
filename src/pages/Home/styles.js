@@ -7,11 +7,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: 100%;
 
-  position: relative;
+  /* position: relative; */
 
   --banner-height: 16rem;
-  overflow: auto;
 
   header {
     position: fixed;
@@ -19,13 +19,16 @@ export const Container = styled.div`
   }
 
   main {
-
+    /* position: absolute; */
+    /* z-index: 1; */
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    /* border: 1px solid white; */
+
     margin-top: 9.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 
     width: 100%;
 
@@ -77,8 +80,11 @@ export const Container = styled.div`
   }
 
   footer {
+    /* margin-top: 3rem; */
     position: fixed;
-    z-index: 2;
+    bottom: 0;
+
+    /* z-index: -1; */
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.XG}) {

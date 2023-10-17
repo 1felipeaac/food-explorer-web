@@ -8,9 +8,10 @@ export const Container = styled.footer`
 
     bottom: 0;
     position: absolute;
-    text-align: center;
+    /* text-align: center; */
 
     height: 4.8rem;
+    /* max-width: 70rem; */
     width: 100%;
 
     padding: 0 1rem;

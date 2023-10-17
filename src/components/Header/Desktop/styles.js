@@ -14,22 +14,20 @@ export const Container = styled.header`
     padding: 1.75rem 7.7rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     max-width: 112rem;
     width: 100%;
 
     gap: 2rem;
 
-    div{
-        /* max-width: 15rem; */
-        /* flex-wrap: wrap;
-        justify-content: flex-end; */
-        /* align-items: flex-end; */
-        align-items: self-end;
+    div{     
 
         span{
           padding: 0;
           min-width: 12.5rem;
+          display: flex;
+          justify-content: left;
+
         }
         p{
           color: ${({theme})=> theme.COLORS.TINTS.CAKE_200};
