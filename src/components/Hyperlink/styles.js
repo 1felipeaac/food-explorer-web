@@ -10,4 +10,7 @@ export const Container = styled(Link)`
     text-decoration: none;
     color: ${({theme}) => theme.COLORS.LIGHT._400};
     font-weight: 400;
+
+    display: flex;
+    align-items: center;
 `

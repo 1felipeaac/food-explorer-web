@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   gap: 1.5rem;
   min-height: 100%;
 
-  header{
+  header {
     position: fixed;
     z-index: 2;
   }
@@ -21,10 +22,28 @@ export const Container = styled.div`
     gap: 1.5rem;
     width: 100%;
     padding: 0 2rem;
+
+    section {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+    }
   }
 
   footer {
     position: fixed;
     z-index: 2;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    #formDish {
+      margin-top: 8.5rem;
+      margin-bottom: 5.5rem;
+
+      section {
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
   }
 `;

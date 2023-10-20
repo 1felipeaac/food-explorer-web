@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import {Container} from './styles.js'
 
-export function Input({title, placeholder, id, type, ...rest}){
+export function Input({title, placeholder, id, type, onChange, ...rest}){
 
     return(
         <Container {...rest}>
             <label htmlFor={id}>{title}</label>
-            <input type={type} name={id} id={id} placeholder={placeholder} />
+            <input onChange={onChange} type={type} name={id} id={id} placeholder={placeholder} />
         </Container>
     )
 }

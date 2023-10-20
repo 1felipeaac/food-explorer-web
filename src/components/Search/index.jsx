@@ -1,11 +1,25 @@
 import { Container, InputSearch } from "./styles";
-import iconSearch from '../../assets/search.svg'
+import iconSearch from "../../assets/search.svg";
+import { useState } from "react";
 
-export function Search() {
+export function Search({ onSearch }) {
+  const [value, setValue] = useState("");
+
+  function handleSearchChange(e) {
+    const searchValue = e.target.value;
+    setValue(searchValue);
+    onSearch(searchValue);
+  }
   return (
     <Container>
       <img src={iconSearch} alt="icone de pesquisa" />
-      <InputSearch type="search" placeholder=" Buscar por pratos ou ingredientes" />
+      <InputSearch
+        id="inputSearch"
+        value={value}
+        onChange={handleSearchChange}
+        type="search"
+        placeholder=" Buscar por pratos ou ingredientes"
+      />
     </Container>
   );
 }

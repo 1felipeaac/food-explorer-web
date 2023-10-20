@@ -7,15 +7,28 @@ import home from "../../assets/homeImg.svg";
 
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
-// import { useAuth } from "../../hooks/auth";
 
 export function Home() {
   const [data, setData] = useState([]);
-  // const [dishes, setDishes] = useState([])
-  // const logged = useAuth();
-  // const role = logged.user.role;
+  const [searchValue, setSearchValue] = useState("");
+  const [dishesFound, setDishesFound] = useState([]);
 
   const dishes = data.dishes;
+  const searchDishes = dishesFound.dishes;
+
+
+  function handleSearch(value) {
+    setSearchValue(value);
+  }
+
+  useEffect(() => {
+    async function fetchSearchDish() {
+      const response = await api.get(`/dishes?name=${searchValue}`);
+      setDishesFound(response.data);
+      // console.log(dishesFound);
+    }
+    fetchSearchDish();
+  }, [searchValue]);
 
   useEffect(() => {
     async function fetchDishes() {
@@ -27,7 +40,7 @@ export function Home() {
   }, []);
   return (
     <Container>
-      <HeaderDesktop />
+      <HeaderDesktop onSearch={handleSearch} />
       <HeaderMobile />
       <main>
         <div id="display">
@@ -40,14 +53,17 @@ export function Home() {
         </div>
         <div id="showDishes">
           {dishes &&
-            dishes.map((dish) => 
-              {if(dish.category === 'café da manhã'){
-                  return (
-                    <CardDish key={dish.id} name={dish.name} price={dish.value} />
-                  )
-              }}
-          )}
+            dishes.map((dish) => {
+              if (dish.category === "café da manhã") {
+                return (
+                  <CardDish key={dish.id} name={dish.name} price={dish.value} />
+                );
+              }
+            })}
         </div>
+        {searchDishes && searchDishes.map((dish)=> 
+        <CardDish key={dish.id} name={dish.name} price={dish.value}/>
+        )}
       </main>
       <Footer />
     </Container>

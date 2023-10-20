@@ -1,4 +1,5 @@
 import { Container } from "./styles";
+import { ReactSVG } from 'react-svg';
 
 import plus from "../../assets/plus.svg"
 import close from "../../assets/close.svg"
@@ -18,7 +19,7 @@ export function Ingredients({isNew, value, onClick, ...rest}){
                 onClick={onClick}
                 className= {isNew ? 'button-add' : 'button-delete'}
             >
-                {isNew ? <img src={plus} alt="icon plus" /> : <img src={close} alt="icon close" />}
+                {isNew ? <ReactSVG src={plus}/> : <ReactSVG src={close}/>}
             </button>
         </Container>
     )
