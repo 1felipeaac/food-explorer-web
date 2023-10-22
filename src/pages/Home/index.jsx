@@ -9,13 +9,23 @@ import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 
 export function Home() {
-  const [data, setData] = useState([]);
+  const [dishes, setDishes] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [dishesFound, setDishesFound] = useState([]);
 
-  const dishes = data.dishes;
-  const searchDishes = dishesFound.dishes;
+  // console.log(dishes)
 
+  // function renderSearch(searchList) {
+  //   if (searchList.length > 0) {
+  //     console.log(searchList.length);
+
+  //     return searchList.map((search) => {
+  //       <CardDish key={search.id} name={search.name} price={search.value} />;
+  //     });
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   function handleSearch(value) {
     setSearchValue(value);
@@ -23,9 +33,14 @@ export function Home() {
 
   useEffect(() => {
     async function fetchSearchDish() {
-      const response = await api.get(`/dishes?name=${searchValue}`);
-      setDishesFound(response.data);
-      // console.log(dishesFound);
+      try {
+        const response = await api.get(`/dishes?name=${searchValue}`);
+
+        setDishesFound(response.data);
+
+      } catch (error) {
+        alert(error.response.data.message);
+      }
     }
     fetchSearchDish();
   }, [searchValue]);
@@ -33,7 +48,7 @@ export function Home() {
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get("/dishes");
-      setData(response.data);
+      setDishes(response.data.dishes);
     }
 
     fetchDishes();
@@ -61,9 +76,11 @@ export function Home() {
               }
             })}
         </div>
-        {searchDishes && searchDishes.map((dish)=> 
-        <CardDish key={dish.id} name={dish.name} price={dish.value}/>
-        )}
+
+        {Array.isArray(dishesFound) &&
+          dishesFound.map((dish) => (
+            <CardDish key={dish.id} name={dish.name} price={dish.value} />
+          ))}
       </main>
       <Footer />
     </Container>

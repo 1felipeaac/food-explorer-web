@@ -4,7 +4,8 @@ import { InputCounter } from "../InputCounter";
 import { Container } from "./styles";
 
 
-export function CardDish({name, price}){
+export function CardDish({search, name, price}){
+    
 
     return(
         <Container>
