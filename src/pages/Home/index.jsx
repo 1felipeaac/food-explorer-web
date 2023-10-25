@@ -17,13 +17,12 @@ export function Home() {
   const [visible, setVisible] = useState(true);
 
   function handleSearch(value) {
+    setDishesFound([]);
     setSearchValue(value);
+    setVisible(true);
+    setMessageError("");
   }
-
-  // console.log(dishesFound);
-
-  // useEffect(() => {}, [dishesFound])
-
+  
   useEffect(() => {
     setErrorCheck(false);
     setMessageError("");
@@ -34,6 +33,7 @@ export function Home() {
 
         if (response.data.length > 0) {
           setDishesFound(response.data);
+          setVisible(false);
         }
       } catch (error) {
         setErrorCheck(true);
@@ -47,15 +47,14 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data.dishes);
-      console.log(dishes);
     }
-
+    setDishesFound([]);
     fetchDishes();
   }, []);
   return (
     <Container>
       <HeaderDesktop onSearch={handleSearch} />
-      <HeaderMobile />
+      <HeaderMobile/>
       <main>
         <div id="display">
           <div id="banner"></div>
@@ -66,18 +65,20 @@ export function Home() {
           </span>
         </div>
         <div id="showDishes">
-          {dishes &&
+          {visible ? (
+            dishes &&
             dishes.map((dish) => {
               if (dish.category === "café da manhã") {
                 return (
                   <CardDish key={dish.id} name={dish.name} price={dish.value} />
                 );
               }
-            })}
+            })
+          ) : undefined}
         </div>
 
         {errorCheck ? (
-          <div>{messageError}</div>
+          <div id="errorMessage">{messageError}</div>
         ) : (
           <div id="searchDishes">
             {Array.isArray(dishesFound) &&

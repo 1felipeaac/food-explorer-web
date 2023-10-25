@@ -28,9 +28,6 @@ export function HeaderMobile() {
             </Buttons>
           ) : null
         }
-      {/* <Buttons id="buttonReceipt">
-        <img src={receipt} id="receipt" alt="icon receipt" />
-      </Buttons> */}
       </nav>
     </Container>
   );

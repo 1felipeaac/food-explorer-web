@@ -78,6 +78,12 @@ export const Container = styled.div`
       margin-bottom: 3rem;
     }
 
+    #errorMessage{
+      background-color: ${({theme}) => theme.COLORS.TINTS.TOMATO_200};
+      position: absolute;
+      top: 7.5rem;
+    }
+
     #searchDishes {
       display: flex;
       align-items: center;

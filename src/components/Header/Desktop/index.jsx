@@ -6,10 +6,6 @@ import { Button } from "../../Button";
 
 import { useAuth } from "../../../hooks/auth";
 
-import { useEffect, useState } from "react";
-
-import { api } from "../../../services/api";
-
 export function HeaderDesktop({onSearch}) {
 
   const logged = useAuth();
