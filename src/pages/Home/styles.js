@@ -13,10 +13,14 @@ export const Container = styled.div`
 
   --banner-height: 16rem;
 
-  header {
+  > header {
     position: fixed;
     z-index: 2;
   }
+
+  /* #mobileMenu{
+    display: none;
+  } */
 
   main {
     /* position: absolute; */
@@ -60,7 +64,7 @@ export const Container = styled.div`
       }
       #presentation {
         position: absolute;
-        right: clamp(0.3rem, 1rem + 5vw, 6rem);
+        right: clamp(0.3rem, 5rem + 7vw, 11rem);
         z-index: 1;
 
         > p {
@@ -144,6 +148,13 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    /* #mobileMenu{
+      position: absolute;
+    background: black;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    } */
     #display {
       margin-top: 2.75rem;
       #banner {

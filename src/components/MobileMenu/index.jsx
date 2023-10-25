@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-undef */
 import { Container, Header } from "./styles";
@@ -8,15 +9,8 @@ import { Search } from "../Search";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Hyperlink } from "../Hyperlink";
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
 
-export function Menu({ title: name }) {
-  const [searchValue, setSearchValue] = useState("");
-  const [dishesFound, setDishesFound] = useState([]);
-  const [errorCheck, setErrorCheck] = useState(false);
-  const [messageError, setMessageError] = useState("");
-  const [visible, setVisible] = useState(true);
+export function Menu({ title: name, onSearch, id }) {
 
   const { signOut } = useAuth();
   const navigate = useNavigate();
@@ -28,38 +22,10 @@ export function Menu({ title: name }) {
     signOut();
     navigate(-1);
   }
-  // console.log(dishesFound)
-  function handleSearch(value) {
-    setDishesFound([]);
-    setSearchValue(value);
-    setVisible(true);
-    setMessageError("");
-  }
 
-  console.log(dishesFound);
-  useEffect(() => {
-    setErrorCheck(false);
-    setMessageError("");
-
-    async function fetchSearchDish() {
-      try {
-        const response = await api.get(`/dishes?name=${searchValue}`);
-
-        if (response.data.length > 0) {
-          setDishesFound(response.data);
-
-          setVisible(false);
-        }
-      } catch (error) {
-        setErrorCheck(true);
-        setMessageError(error.response.data.message);
-      }
-    }
-    fetchSearchDish();
-  }, [searchValue]);
 
   return (
-    <Container>
+    <Container id={id} data-menu-is-open="true">
       <Header>
         <Link to="/">
           <img src={buttonClose} alt="botão de fechar" />
@@ -67,11 +33,12 @@ export function Menu({ title: name }) {
         <h1>Menu</h1>
       </Header>
       <main>
-        <Search onSearch={handleSearch} />
+        <Search onSearch={onSearch} />
         {role === "admin" ? (
           <Hyperlink title={"Novo prato"} to={"/newDish"} />
         ) : null}
         {name && <Hyperlink onClick={logOut} title={name} />}
+
       </main>
       <Footer />
     </Container>

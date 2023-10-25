@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
 
   width: 100vw;
@@ -35,6 +36,13 @@ export const Container = styled.div`
       font-weight: lighter;
       line-height: 140%;
     }
+  }
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    position: absolute;
+    background: black;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
   }
 `;
 

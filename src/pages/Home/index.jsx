@@ -7,6 +7,7 @@ import home from "../../assets/homeImg.svg";
 
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
+import { Menu } from "../../Components/MobileMenu";
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
@@ -55,6 +56,7 @@ export function Home() {
     <Container>
       <HeaderDesktop onSearch={handleSearch} />
       <HeaderMobile/>
+      <Menu id="mobileMenu" onSearch={handleSearch} title={"Sair"}/>
       <main>
         <div id="display">
           <div id="banner"></div>
