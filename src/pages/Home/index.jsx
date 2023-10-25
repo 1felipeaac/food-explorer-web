@@ -12,34 +12,32 @@ export function Home() {
   const [dishes, setDishes] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [dishesFound, setDishesFound] = useState([]);
-
-  // console.log(dishes)
-
-  // function renderSearch(searchList) {
-  //   if (searchList.length > 0) {
-  //     console.log(searchList.length);
-
-  //     return searchList.map((search) => {
-  //       <CardDish key={search.id} name={search.name} price={search.value} />;
-  //     });
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  const [errorCheck, setErrorCheck] = useState(false);
+  const [messageError, setMessageError] = useState("");
+  const [visible, setVisible] = useState(true);
 
   function handleSearch(value) {
     setSearchValue(value);
   }
 
+  // console.log(dishesFound);
+
+  // useEffect(() => {}, [dishesFound])
+
   useEffect(() => {
+    setErrorCheck(false);
+    setMessageError("");
+
     async function fetchSearchDish() {
       try {
         const response = await api.get(`/dishes?name=${searchValue}`);
 
-        setDishesFound(response.data);
-
+        if (response.data.length > 0) {
+          setDishesFound(response.data);
+        }
       } catch (error) {
-        alert(error.response.data.message);
+        setErrorCheck(true);
+        setMessageError(error.response.data.message);
       }
     }
     fetchSearchDish();
@@ -49,6 +47,7 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data.dishes);
+      console.log(dishes);
     }
 
     fetchDishes();
@@ -77,10 +76,16 @@ export function Home() {
             })}
         </div>
 
-        {Array.isArray(dishesFound) &&
-          dishesFound.map((dish) => (
-            <CardDish key={dish.id} name={dish.name} price={dish.value} />
-          ))}
+        {errorCheck ? (
+          <div>{messageError}</div>
+        ) : (
+          <div id="searchDishes">
+            {Array.isArray(dishesFound) &&
+              dishesFound.map((dish) => (
+                <CardDish key={dish.id} name={dish.name} price={dish.value} />
+              ))}
+          </div>
+        )}
       </main>
       <Footer />
     </Container>

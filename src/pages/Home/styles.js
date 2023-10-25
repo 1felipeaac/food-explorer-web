@@ -77,6 +77,15 @@ export const Container = styled.div`
       /* height: 100vh; */
       margin-bottom: 3rem;
     }
+
+    #searchDishes {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      /* height: 100vh; */
+      margin-bottom: 3rem;
+    }
   }
 
   footer {
@@ -107,7 +116,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XG}) {
-
     #imgHome {
       top: 13.7rem;
     }
@@ -130,7 +138,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-
     #display {
       margin-top: 2.75rem;
       #banner {
