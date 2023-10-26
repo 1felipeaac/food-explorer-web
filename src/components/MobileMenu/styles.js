@@ -3,30 +3,34 @@ import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
   display: none;
-  flex-direction: column;
-
+  background: ${({theme}) => theme.COLORS.DARK._1000};
+  
   width: 100vw;
   height: 100vh;
 
-  > main {
+  main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 3.6rem;
 
-    /* max-width: 42.5rem; */
+    padding: 3.6rem 2.8rem;
 
-    margin: 3.6rem 2.8rem;
+    margin: 0;
 
     span {
+      max-width: none;
       width: 100%;
       display: flex;
       align-items: center;
       background-color: ${({ theme }) => theme.COLORS.DARK._900};
 
       img {
-        /* background-color: ${({ theme }) => theme.COLORS.DARK._900}; */
         padding: 1.2rem 1.4rem;
+      }
+
+      input{
+        width: 100%;
       }
     }
 
@@ -37,12 +41,17 @@ export const Container = styled.div`
       line-height: 140%;
     }
   }
-  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {    
     position: absolute;
-    background: black;
     z-index: 2;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    &[data-menu-is-open="true"]{
+      transform: translateX(0);
+    }
   }
 `;
 
@@ -51,10 +60,12 @@ export const Header = styled.header`
   align-items: center;
   gap: 1.6rem;
 
+  width: 100%;
+
   background-color: ${({ theme }) => theme.COLORS.DARK._700};
 
   height: 11.4rem;
-  padding: 5.6rem 2.8rem 2.4rem;
+  padding: 2.62rem 3.7rem 1.31rem;
 
   > img {
     height: 1.8rem;

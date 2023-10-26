@@ -52,7 +52,6 @@ export function HeaderDesktop({onSearch}) {
         ) : (
           <Button title={"Novo Prato"} toPage={"/newDish"} />
         )}
-        {/* <Button title={"Pedidos"} icon={iconReceipt} /> */}
         <button id="exit" onClick={signOut}>
           <img src={exit} alt="icon exit" />
         </button>

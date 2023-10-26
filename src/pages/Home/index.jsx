@@ -16,6 +16,7 @@ export function Home() {
   const [errorCheck, setErrorCheck] = useState(false);
   const [messageError, setMessageError] = useState("");
   const [visible, setVisible] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   function handleSearch(value) {
     setDishesFound([]);
@@ -55,8 +56,8 @@ export function Home() {
   return (
     <Container>
       <HeaderDesktop onSearch={handleSearch} />
-      <HeaderMobile/>
-      <Menu id="mobileMenu" onSearch={handleSearch} title={"Sair"}/>
+      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)}/>
+      <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} id="mobileMenu" onSearch={handleSearch} title={"Sair"}/>
       <main>
         <div id="display">
           <div id="banner"></div>

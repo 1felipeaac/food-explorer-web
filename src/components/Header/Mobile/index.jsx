@@ -1,25 +1,25 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-undef */
 import { Container, Buttons } from "./styles";
 import { Logo } from "../../Logo";
 import menu from "../../../assets/menu.svg";
 import receipt from "../../../assets/receipt.svg";
-import { Link } from "react-router-dom";
 import { useAuth } from "../../../hooks/auth";
   
 
 
-export function HeaderMobile() {
+export function HeaderMobile({onOpenMenu}) {
   const logged = useAuth();
   const role = logged.user.role;
   
   return (
     <Container className="mobile">
       <nav>
-        <Link to="/menu">
-          <Buttons id="buttonMenu">
-            <img src={menu} id="menu" alt="icon menu" />
-          </Buttons>
-        </Link>
+        
+        <Buttons id="buttonMenu" onClick={onOpenMenu}>
+          <img src={menu} id="menu" alt="icon menu" />
+        </Buttons>
+     
         {role === "admin" ? (<Logo role={role}/>) : <Logo/>}
         {role === "costumer" ? 
           (

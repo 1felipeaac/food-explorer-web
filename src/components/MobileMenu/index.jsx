@@ -9,8 +9,9 @@ import { Search } from "../Search";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Hyperlink } from "../Hyperlink";
+import { Buttons } from "../Header/Mobile/styles";
 
-export function Menu({ title: name, onSearch, id }) {
+export function Menu({ title: name, onSearch, id, menuIsOpen, onCloseMenu }) {
 
   const { signOut } = useAuth();
   const navigate = useNavigate();
@@ -25,9 +26,9 @@ export function Menu({ title: name, onSearch, id }) {
 
 
   return (
-    <Container id={id} data-menu-is-open="true">
+    <Container id={id} data-menu-is-open={menuIsOpen}>
       <Header>
-        <Link to="/">
+        <Link onClick={onCloseMenu}>
           <img src={buttonClose} alt="botão de fechar" />
         </Link>
         <h1>Menu</h1>
