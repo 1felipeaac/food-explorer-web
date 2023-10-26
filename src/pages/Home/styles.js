@@ -56,7 +56,7 @@ export const Container = styled.div`
       }
       #presentation {
         position: absolute;
-        right: clamp(0.3rem, 5rem + 7vw, 11rem);
+        right: clamp(0.3rem, 5rem + 7vw, 5rem);
         z-index: 1;
 
         > p {
@@ -102,6 +102,7 @@ export const Container = styled.div`
       }
 
       #presentation {
+        /* right: clamp(0.3rem, 5rem + 7vw, 15rem); */
         padding-top: 4.5rem;
         top: 20rem;
         h3 {

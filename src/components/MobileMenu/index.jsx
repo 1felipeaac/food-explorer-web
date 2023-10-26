@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { Hyperlink } from "../Hyperlink";
 import { Buttons } from "../Header/Mobile/styles";
 
-export function Menu({ title: name, onSearch, id, menuIsOpen, onCloseMenu }) {
+export function Menu({ onSearch, id, menuIsOpen, onCloseMenu }) {
 
   const { signOut } = useAuth();
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export function Menu({ title: name, onSearch, id, menuIsOpen, onCloseMenu }) {
 
   function logOut() {
     signOut();
-    navigate(-1);
+    navigate("/");
   }
 
 
@@ -38,7 +38,7 @@ export function Menu({ title: name, onSearch, id, menuIsOpen, onCloseMenu }) {
         {role === "admin" ? (
           <Hyperlink title={"Novo prato"} to={"/newDish"} />
         ) : null}
-        {name && <Hyperlink onClick={logOut} title={name} />}
+        <Hyperlink onClick={logOut} title={"Sair"} />
 
       </main>
       <Footer />
