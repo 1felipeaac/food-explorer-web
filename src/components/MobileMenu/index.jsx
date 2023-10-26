@@ -9,7 +9,6 @@ import { Search } from "../Search";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Hyperlink } from "../Hyperlink";
-import { Buttons } from "../Header/Mobile/styles";
 
 export function Menu({ onSearch, id, menuIsOpen, onCloseMenu }) {
 

@@ -73,7 +73,7 @@ export function Home() {
             dishes.map((dish) => {
               if (dish.category === "café da manhã") {
                 return (
-                  <CardDish key={dish.id} name={dish.name} price={dish.value} />
+                  <CardDish to={`details/${dish.id}`} key={dish.id} name={dish.name} price={dish.value} />
                 );
               }
             })
