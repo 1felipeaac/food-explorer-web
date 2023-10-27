@@ -4,7 +4,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+  width: fit-content;
 
   background-color: ${({ theme, isNew }) =>
     isNew ? "transparent" : theme.COLORS.LIGHT._600};
@@ -16,14 +16,14 @@ export const Container = styled.div`
   border-radius: 8px;
 
   input {
-    width: 100%;
+    max-width: 10rem;
     height: 3rem;
     background: transparent;
 
     border: none;
     border-radius: 8px 0 0 8px;
 
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0 0.5rem 1rem;
     color: ${({ theme }) => theme.COLORS.LIGHT._100};
 
     &::placeholder {
@@ -53,7 +53,7 @@ export const Container = styled.div`
     height: 3rem;
     border: none;
     border-radius: 0 8px 8px 0;
-    padding: 0.5rem 1rem;
+    padding: 0 0.5rem 0 0;
   }
 
   /* @media (max-width: ${DEVICE_BREAKPOINTS.MD}){

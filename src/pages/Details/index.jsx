@@ -20,7 +20,7 @@ export function Details() {
     async function fetchDish() {
       const response = await api.get(`dishes/${params.id}`);
       setData(response.data);
-      // console.log(data.ingredients);
+      console.log(response);
     }
 
     fetchDish();

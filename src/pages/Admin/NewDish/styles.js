@@ -25,6 +25,7 @@ export const Container = styled.div`
 
     section {
       display: flex;
+      justify-content: center;
       gap: 1rem;
       width: 100%;
     }

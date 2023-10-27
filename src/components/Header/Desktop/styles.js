@@ -11,11 +11,11 @@ export const Container = styled.header`
 
   > nav {
 
-    padding: 1.75rem 7.7rem;
+    padding: 1.75rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 112rem;
+    max-width: 70rem;
     width: 100%;
 
     gap: 2rem;

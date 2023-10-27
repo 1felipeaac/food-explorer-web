@@ -30,7 +30,8 @@ export const Container = styled.div`
       }
 
       input{
-        width: 100%;
+        /* width: 100%; */
+        max-width: none;
       }
     }
 

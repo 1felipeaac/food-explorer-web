@@ -51,12 +51,12 @@ export const Container = styled.div`
 
       #imgHome {
         position: absolute;
-        left: 0;
+        /* left: 0; */
         height: calc(var(--banner-height) + 6rem);
       }
       #presentation {
         position: absolute;
-        right: clamp(0.3rem, 5rem + 7vw, 5rem);
+        /* right: clamp(0.3rem, 5rem + 7vw, 5rem); */
         z-index: 1;
 
         > p {
@@ -99,12 +99,14 @@ export const Container = styled.div`
 
       #imgHome {
         top: 13.7rem;
+        left: 5rem;
       }
 
       #presentation {
         /* right: clamp(0.3rem, 5rem + 7vw, 15rem); */
         padding-top: 4.5rem;
         top: 20rem;
+        right: 13rem;
         h3 {
           font-size: 2.5rem;
           font-weight: 500;
@@ -116,6 +118,7 @@ export const Container = styled.div`
   @media (max-width: ${DEVICE_BREAKPOINTS.XG}) {
     #imgHome {
       top: 13.7rem;
+      left: 0;
     }
 
     #display {
@@ -127,6 +130,7 @@ export const Container = styled.div`
       #presentation {
         padding-top: 4.5rem;
         top: 20rem;
+        right: 4rem;
         h3 {
           font-size: 2.5rem;
           font-weight: 500;
