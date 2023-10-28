@@ -24,7 +24,7 @@ export function Home() {
     setVisible(true);
     setMessageError("");
   }
-  
+
   useEffect(() => {
     setErrorCheck(false);
     setMessageError("");
@@ -56,8 +56,14 @@ export function Home() {
   return (
     <Container>
       <HeaderDesktop onSearch={handleSearch} />
-      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)}/>
-      <Menu menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} id="mobileMenu" onSearch={handleSearch} title={"Sair"}/>
+      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
+      <Menu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+        id="mobileMenu"
+        onSearch={handleSearch}
+        title={"Sair"}
+      />
       <main>
         <div id="display">
           <div id="banner"></div>
@@ -68,16 +74,17 @@ export function Home() {
           </span>
         </div>
         <div id="showDishes">
-          {visible ? (
-            dishes &&
-            dishes.map((dish) => {
-              if (dish.category === "café da manhã") {
-                return (
-                  <CardDish to={`details/${dish.id}`} key={dish.id} name={dish.name} price={dish.value} />
-                );
-              }
-            })
-          ) : undefined}
+          {visible
+            ? dishes &&
+              dishes.map((dish) => (
+                <CardDish
+                  to={`details/${dish.id}`}
+                  key={dish.id}
+                  name={dish.name}
+                  price={dish.value}
+                />
+              ))
+            : undefined}
         </div>
 
         {errorCheck ? (

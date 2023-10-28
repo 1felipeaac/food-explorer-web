@@ -3,7 +3,7 @@ import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
   display: none;
-  background: ${({theme}) => theme.COLORS.DARK._1000};
+  background: ${({theme}) => theme.COLORS.DARK._300};
   
   width: 100vw;
   height: 100vh;
@@ -40,6 +40,9 @@ export const Container = styled.div`
       font-size: 2.4rem;
       font-weight: lighter;
       line-height: 140%;
+      border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK._1000};
+      width: 100%;
+      /* background-color: red; */
     }
   }
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {    

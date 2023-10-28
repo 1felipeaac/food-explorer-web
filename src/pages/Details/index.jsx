@@ -20,7 +20,7 @@ export function Details() {
     async function fetchDish() {
       const response = await api.get(`dishes/${params.id}`);
       setData(response.data);
-      console.log(response);
+      // console.log(response);
     }
 
     fetchDish();
@@ -38,12 +38,12 @@ export function Details() {
             <h2>{data.dish.name}</h2>
             <p>{data.dish.description}</p>
             <section>
-              {data.ingredients.map((ingredient) => (
-                <Tags key={ingredient.id} name={ingredient} />
+              {data.ingredients.map((ingredient, index) => (
+                <Tags key={index} name={ingredient} />
                 // <div key={ingredient.id}>{ingredient}</div>
               ))}
             </section>
-            <Button title={"Editar prato"} />
+            <Button toPage={`/editDish/${data.id}`} title={"Editar prato"} />
           </div>
         </main>
       )}

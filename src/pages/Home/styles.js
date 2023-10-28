@@ -9,7 +9,6 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100%;
 
-
   --banner-height: 16rem;
 
   > header {
@@ -17,12 +16,10 @@ export const Container = styled.div`
     z-index: 2;
   }
 
-
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 
     margin-top: 9.5rem;
     margin-bottom: 5rem;
@@ -69,12 +66,18 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 1rem;
       width: 100%;
       margin-bottom: 3rem;
+
+      a {
+        flex-basis: 25%;
+      }
     }
 
-    #errorMessage{
-      background-color: ${({theme}) => theme.COLORS.TINTS.TOMATO_200};
+    #errorMessage {
+      background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_200};
       position: absolute;
       top: 7.5rem;
     }
@@ -140,7 +143,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-   
     #display {
       margin-top: 2.75rem;
       #banner {
@@ -168,9 +170,8 @@ export const Container = styled.div`
       }
     }
   }
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}){
-
-    #banner{
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    #banner {
       width: clamp(20rem, 25% + 90vw, 50rem);
     }
     #presentation {

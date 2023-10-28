@@ -28,6 +28,22 @@ export const Container = styled.div`
       gap: 1rem;
       width: 100%;
     }
+
+    #buttons{
+      display: flex;
+      align-items: center;
+      /* justify-content: space-around; */
+      gap: 2rem;
+
+      button{
+        background-color: ${({theme})=> theme.COLORS.TINTS.TOMATO_400};
+
+      }
+
+      button:first-child {
+        background-color: ${({theme})=> theme.COLORS.DARK._800};
+      }
+    }
   }
 
   footer {
