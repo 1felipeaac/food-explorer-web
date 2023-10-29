@@ -17,6 +17,9 @@ export function Home() {
   const [messageError, setMessageError] = useState("");
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [imageUrl, setImageUrl] = useState("")
+
+
 
   function handleSearch(value) {
     setDishesFound([]);
@@ -49,6 +52,9 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data.dishes);
+      // setImageUrl(api.defaults.baseURL/files/)
+  // const imageUrl = `${api.defaults.baseURL/files/${}}`
+
     }
     setDishesFound([]);
     fetchDishes();
@@ -82,6 +88,7 @@ export function Home() {
                   key={dish.id}
                   name={dish.name}
                   price={dish.value}
+                  src={`api.defaults.baseURL/files/${dish.image}`}
                 />
               ))
             : undefined}
