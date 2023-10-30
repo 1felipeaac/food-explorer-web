@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 import { useState } from "react";
 
@@ -16,6 +17,9 @@ import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
 import { ReactSVG } from "react-svg";
+import { useAuth } from "../../../hooks/auth";
+
+import { AxiosError } from "axios";
 
 import arrowLeft from "../../../assets/arrowLeft.svg"
 
@@ -23,10 +27,17 @@ export function NewDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
+  const [image, setImage] = useState(null)
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [value, setValue] = useState("");
+
+  const id = useAuth();
+
+  const userId = id.user.id;
+  // console.log(userId)
+
 
   const navigate = useNavigate();
 
@@ -58,17 +69,34 @@ export function NewDish() {
       if (newIngredient) {
         return alert("Ingrediente(s) não adicionado");
       }
-      await api.post("/dishes", {
-        name,
-        category,
-        description,
-        ingredients,
-        value,
-      });
+      console.log(`Imagem: ${image},
+      Nome: ${name},
+      Category: ${category},
+      Description: ${description},
+      Value: ${value},
+      Ingredients: ${ingredients}
+      `)
+      await api.post("/dishes",
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        } 
+      }
+        // {
+        //   image,
+        //   name,
+        //   category,
+        //   description,
+        //   ingredients,
+        //   value,
+        //   userId
+        // }
+      );
       alert("Prato criado com sucesso");
       navigate("/");
-    } catch (error) {
-      alert(error.message);
+    } catch (AxiosError) {
+      console.log(AxiosError);
+      alert(AxiosError.response.data.message);
     }
   }
 
@@ -86,6 +114,7 @@ export function NewDish() {
           title={"Imagem do prato"}
           type={"file"}
           placeholder={"Selecione imagem"}
+          onChange={e => setImage(e.target.files[0])}
         />
         <Input
           title={"Nome"}
