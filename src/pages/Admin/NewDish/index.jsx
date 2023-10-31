@@ -69,14 +69,7 @@ export function NewDish() {
       if (newIngredient) {
         return alert("Ingrediente(s) não adicionado");
       }
-      console.log(`Imagem: ${image},
-      Nome: ${name},
-      Category: ${category},
-      Description: ${description},
-      Value: ${value},
-      Ingredients: ${ingredients}
-      `)
-
+      
       const formData = new FormData()
       formData.append('image', image)
       formData.append('name', name)

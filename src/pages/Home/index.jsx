@@ -8,6 +8,7 @@ import home from "../../assets/homeImg.svg";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { Menu } from "../../Components/MobileMenu";
+import empty from "../../assets/default-dish.svg"
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
@@ -17,9 +18,7 @@ export function Home() {
   const [messageError, setMessageError] = useState("");
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [imageUrl, setImageUrl] = useState("")
-
-
+  // const [imageUrl, setImageUrl] = useState("")
 
   function handleSearch(value) {
     setDishesFound([]);
@@ -27,6 +26,11 @@ export function Home() {
     setVisible(true);
     setMessageError("");
   }
+
+  // function getImages(img){
+  //   const response = api.defaults.baseURL.get(`/files/${img}`);
+  //   console.log(response)
+  // }
 
   useEffect(() => {
     setErrorCheck(false);
@@ -52,6 +56,8 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data.dishes);
+
+      
       // setImageUrl(api.defaults.baseURL/files/)
   // const imageUrl = `${api.defaults.baseURL/files/${}}`
 
@@ -88,7 +94,9 @@ export function Home() {
                   key={dish.id}
                   name={dish.name}
                   price={dish.value}
-                  src={`api.defaults.baseURL/files/${dish.image}`}
+                  src={
+                    dish.image ? `${api.defaults.baseURL}/files/${dish.image}`: empty
+                  }
                 />
               ))
             : undefined}

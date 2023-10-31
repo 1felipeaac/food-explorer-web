@@ -69,7 +69,7 @@ export const Container = styled.div`
       flex-wrap: wrap;
       gap: 1rem;
       width: 100%;
-      margin-bottom: 3rem;
+      margin: 3rem 0;
 
       a {
         flex-basis: 25%;

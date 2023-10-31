@@ -10,6 +10,8 @@ import { api } from "../../services/api";
 import { ReactSVG } from "react-svg";
 import back from "../../assets/arrowLeft.svg";
 import { Tags } from "../../components/Tags";
+import empty from "../../assets/default-dish.svg"
+
 
 export function Details() {
   const [data, setData] = useState(null);
@@ -34,7 +36,7 @@ export function Details() {
         <main>
           <Hyperlink icon={<ReactSVG src={back} />} to={"/"} title={"voltar"} />
           <div>
-            <img alt="dish's image" />
+            <img src={data.dish.image ? `${api.defaults.baseURL}/files/${data.dish.image}`: empty} alt="dish's image" />
             <h2>{data.dish.name}</h2>
             <p>{data.dish.description}</p>
             <section>

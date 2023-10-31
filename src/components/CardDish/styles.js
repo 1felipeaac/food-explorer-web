@@ -8,6 +8,9 @@ export const Container = styled(Link)`
     gap: 2rem;
     height: 18.5rem;
     width: 13.125rem;
+    img{
+        width: 4rem;
+    }
     h3 {
         font-weight: 100;
         text-align: center;
