@@ -76,21 +76,21 @@ export function NewDish() {
       Value: ${value},
       Ingredients: ${ingredients}
       `)
-      await api.post("/dishes",
+
+      const formData = new FormData()
+      formData.append('image', image)
+      formData.append('name', name)
+      formData.append('category', category)
+      formData.append('ingredients', ingredients)
+      formData.append('value', value)
+      formData.append('description', description)
+
+      await api.post("/dishes", formData,
       {
         headers: {
           'Content-Type': 'multipart/form-data'
         } 
       }
-        // {
-        //   image,
-        //   name,
-        //   category,
-        //   description,
-        //   ingredients,
-        //   value,
-        //   userId
-        // }
       );
       alert("Prato criado com sucesso");
       navigate("/");
