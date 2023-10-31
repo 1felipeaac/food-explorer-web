@@ -17,11 +17,11 @@ export const Container = styled.div`
 
   input {
     max-width: 10rem;
-    height: 3rem;
+    height: 2rem;
     background: transparent;
 
     border: none;
-    border-radius: 8px 0 0 8px;
+    border-radius: .5rem 0 0 .5rem;
 
     padding: 0.5rem 0 0.5rem 1rem;
     color: ${({ theme }) => theme.COLORS.LIGHT._100};
@@ -50,9 +50,9 @@ export const Container = styled.div`
     /* background-color: ${({ theme }) => theme.COLORS.DARK._800}; */
     background: transparent;
 
-    height: 3rem;
+    height: 2rem;
     border: none;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 .5rem .5rem 0;
     padding: 0 0.5rem 0 0;
   }
 

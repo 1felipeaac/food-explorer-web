@@ -1,34 +1,77 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 
   main {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    width: 100%;
+
+    margin-top: 8rem;
+    margin-bottom: 5.5rem;
 
     a {
       line-height: 0;
     }
 
-    div {
+    #contentDetails {
       display: flex;
-      flex-direction: column;
       align-items: center;
 
-      img{
-        width: 10rem;
+      gap: 3rem;
+      width: 100%;
+
+      img {
+        width: 24.37rem;
       }
-      section {
+
+      #dishDetails {
+        width: 100%;
+
         display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        flex-direction: column;
+
+        gap: 1.5rem;
+        section {
+          display: flex;
+
+          gap: 0.75rem;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        button {
+          background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_100};
+          max-width: 8.18rem;
+          height: 3rem;
+        }
       }
-      button {
-        background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_400};
+    }
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    main {
+      flex-direction: column;
+
+      #contentDetails {
+        flex-direction: column;
+        align-items: center;
+        #dishDetails {
+          align-items: center;
+
+          section {
+            justify-content: center;
+          }
+        }
       }
     }
   }

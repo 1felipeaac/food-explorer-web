@@ -30,6 +30,11 @@ export default createGlobalStyle`
  
     }
 
+    header{
+        position: fixed;
+        z-index: 2;
+    }
+
     body{
         background-color: ${({ theme }) => theme.COLORS.DARK._400};
         
@@ -40,16 +45,11 @@ export default createGlobalStyle`
 
         color: ${({ theme }) => theme.COLORS.LIGHT._100};
 
-        /* border: 1px solid white; */
-
-        /* height: 100vh; */
         max-width: 70rem;
         width: 100%;
         height: 100%;
-
-
     }
-
+    
     a{
         text-decoration: none;
         color: ${({ theme }) => theme.COLORS.LIGHT._100};

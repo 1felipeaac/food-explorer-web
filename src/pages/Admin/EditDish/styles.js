@@ -9,10 +9,10 @@ export const Container = styled.div`
   gap: 1.5rem;
   min-height: 100%;
 
-  header {
+  /* header {
     position: fixed;
     z-index: 2;
-  }
+  } */
 
   #formDish {
     margin-top: 7.5rem;

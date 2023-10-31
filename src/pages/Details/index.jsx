@@ -10,8 +10,7 @@ import { api } from "../../services/api";
 import { ReactSVG } from "react-svg";
 import back from "../../assets/arrowLeft.svg";
 import { Tags } from "../../components/Tags";
-import empty from "../../assets/default-dish.svg"
-
+import empty from "../../assets/default-dish.svg";
 
 export function Details() {
   const [data, setData] = useState(null);
@@ -35,17 +34,25 @@ export function Details() {
       {data && (
         <main>
           <Hyperlink icon={<ReactSVG src={back} />} to={"/"} title={"voltar"} />
-          <div>
-            <img src={data.dish.image ? `${api.defaults.baseURL}/files/${data.dish.image}`: empty} alt="dish's image" />
-            <h2>{data.dish.name}</h2>
-            <p>{data.dish.description}</p>
-            <section>
-              {data.ingredients.map((ingredient, index) => (
-                <Tags key={index} name={ingredient} />
-                // <div key={ingredient.id}>{ingredient}</div>
-              ))}
-            </section>
-            <Button toPage={`/editDish/${data.id}`} title={"Editar prato"} />
+          <div id="contentDetails">
+            <img
+              src={
+                data.dish.image
+                  ? `${api.defaults.baseURL}/files/${data.dish.image}`
+                  : empty
+              }
+              alt="dish's image"
+            />
+            <span id="dishDetails">
+              <h2>{data.dish.name}</h2>
+              <p>{data.dish.description}</p>
+              <section>
+                {data.ingredients.map((ingredient, index) => (
+                  <Tags key={index} name={ingredient} />
+                ))}
+              </section>
+              <Button toPage={`/editDish/${data.id}`} title={"Editar prato"} />
+            </span>
           </div>
         </main>
       )}

@@ -18,16 +18,15 @@ import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
 import { ReactSVG } from "react-svg";
 import { useAuth } from "../../../hooks/auth";
+import upload from "../../../assets/upload.svg";
 
-import { AxiosError } from "axios";
-
-import arrowLeft from "../../../assets/arrowLeft.svg"
+import arrowLeft from "../../../assets/arrowLeft.svg";
 
 export function NewDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -37,7 +36,6 @@ export function NewDish() {
 
   const userId = id.user.id;
   // console.log(userId)
-
 
   const navigate = useNavigate();
 
@@ -69,22 +67,20 @@ export function NewDish() {
       if (newIngredient) {
         return alert("Ingrediente(s) não adicionado");
       }
-      
-      const formData = new FormData()
-      formData.append('image', image)
-      formData.append('name', name)
-      formData.append('category', category)
-      formData.append('ingredients', ingredients)
-      formData.append('value', value)
-      formData.append('description', description)
 
-      await api.post("/dishes", formData,
-      {
+      const formData = new FormData();
+      formData.append("image", image);
+      formData.append("name", name);
+      formData.append("category", category);
+      formData.append("ingredients", ingredients);
+      formData.append("value", value);
+      formData.append("description", description);
+
+      await api.post("/dishes", formData, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        } 
-      }
-      );
+          "Content-Type": "multipart/form-data",
+        },
+      });
       alert("Prato criado com sucesso");
       navigate("/");
     } catch (AxiosError) {
@@ -99,50 +95,70 @@ export function NewDish() {
       <HeaderMobile />
 
       <div id="formDish">
-        <Hyperlink icon={<ReactSVG src={arrowLeft}/>} title={"Voltar"} to={"/"} />
+        <Hyperlink
+          icon={<ReactSVG src={arrowLeft} />}
+          title={"Voltar"}
+          to={"/"}
+        />
 
         <h1>Novo prato</h1>
 
         <Input
-          title={"Imagem do prato"}
+          idContainer={"inputImageComponent"}
+          id={"inputImage"}
+          title={"Imagem do Prato"}
+          icon={<ReactSVG src={upload}/>}
           type={"file"}
           placeholder={"Selecione imagem"}
-          onChange={e => setImage(e.target.files[0])}
+          onChange={(e) => setImage(e.target.files[0])}
         />
         <Input
+          idContainer={"inputNameComponent"}
+          id={"inputName"}
           title={"Nome"}
           type={"text"}
           placeholder={"Ex.: Cuscuz"}
           onChange={(e) => setName(e.target.value)}
         />
         <Select onChange={(e) => setCategory(e.target.value)} />
-        <section>
-          {ingredients.map((ingredient, index) => (
+
+        <div id="tags">
+          <label>Ingredientes</label>
+          <section>
+            {ingredients.map((ingredient, index) => (
+              <Ingredients
+                key={String(index)}
+                value={ingredient}
+                onClick={() => handleRemoveIngredients(ingredient)}
+              />
+            ))}
             <Ingredients
-              key={String(index)}
-              value={ingredient}
-              onClick={() => handleRemoveIngredients(ingredient)}
+              isNew
+              value={newIngredient}
+              placeholder="Novo ingrediente"
+              onChange={(e) => setNewIngredient(e.target.value)}
+              onClick={handleAddIngredients}
             />
-          ))}
-          <Ingredients
-            isNew
-            value={newIngredient}
-            placeholder="Novo ingrediente"
-            onChange={(e) => setNewIngredient(e.target.value)}
-            onClick={handleAddIngredients}
-          />
-        </section>
+          </section>
+        </div>
         <Input
+          idContainer={"inputValueContainer"}
+          id={"inputValue"}
           title={"Preço"}
           type={"number"}
           placeholder={"R$00,00"}
           onChange={(e) => setValue(e.target.value)}
         />
         <Textarea
+          id={"textareaForm"}
           placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
           onChange={(e) => setDescription(e.target.value)}
         />
-        <Button title={"Salvar Alterações"} onClick={handleNewDish} />
+        <Button
+          id={"buttonForm"}
+          title={"Salvar Alterações"}
+          onClick={handleNewDish}
+        />
       </div>
       <Footer />
     </Container>

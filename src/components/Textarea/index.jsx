@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 
-export function Textarea({ placeholder, onChange, ...rest }) {
+export function Textarea({ id, placeholder, onChange, ...rest }) {
   return (
-    <Container>
+    <Container id={id}>
       <label htmlFor="description">Descrição</label>
       <textarea
         onChange={onChange}

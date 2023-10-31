@@ -11,17 +11,17 @@ export const Container = styled.div`
 
   --banner-height: 16rem;
 
-  > header {
+  /* > header {
     position: fixed;
     z-index: 2;
-  }
+  } */
 
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin-top: 9.5rem;
+    margin-top: 7.5rem;
     margin-bottom: 5rem;
 
     width: 100%;
@@ -101,7 +101,7 @@ export const Container = styled.div`
       margin-top: 10.25rem;
 
       #imgHome {
-        top: 13.7rem;
+        top: 11.7rem;
         left: 5rem;
       }
 
@@ -119,15 +119,12 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XG}) {
-    #imgHome {
-      top: 13.7rem;
-      left: 0;
-    }
 
     #display {
       margin-top: 10.25rem;
       #imgHome {
-        top: 13.7rem;
+        top: 11.7rem;
+        left: 0;
       }
 
       #presentation {

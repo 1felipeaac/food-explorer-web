@@ -6,6 +6,16 @@ export const Container = styled.div`
   justify-content: space-between;
   color: ${({ theme }) => theme.COLORS.LIGHT._400};
 
+  >label{
+    display: flex;
+    align-items: center;
+    /* height: 3rem; */
+
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    padding: 0 .75rem;
+  }
+
   > input {
     background-color: ${({ theme }) => theme.COLORS.DARK._900};
     border: none;
