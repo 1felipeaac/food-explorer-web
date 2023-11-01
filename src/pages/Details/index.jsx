@@ -12,10 +12,15 @@ import back from "../../assets/arrowLeft.svg";
 import { Tags } from "../../components/Tags";
 import empty from "../../assets/default-dish.svg";
 
+import {useAuth} from '../../hooks/auth'
+import { InputCounter } from "../../Components/InputCounter";
+
 export function Details() {
   const [data, setData] = useState(null);
   // const [ingerdients, setIngredients] = useState([])
   const params = useParams();
+  const logged = useAuth();
+  const role = logged.user.role;
 
   useEffect(() => {
     async function fetchDish() {
@@ -51,7 +56,15 @@ export function Details() {
                   <Tags key={index} name={ingredient} />
                 ))}
               </section>
-              <Button toPage={`/editDish/${data.id}`} title={"Editar prato"} />
+              {
+                role === "admin" ? 
+                <Button toPage={`/editDish/${data.id}`} title={"Editar prato"} />
+                :
+                <div id="submitCostumer">
+                  <InputCounter/>
+                  <Button id={"submitButton"} toPage={`/orders`} title={`incluir ∙ R$ ${data.dish.value.toFixed(2)}`} />
+                </div>
+              }
             </span>
           </div>
         </main>

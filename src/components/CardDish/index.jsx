@@ -4,6 +4,8 @@ import { InputCounter } from "../InputCounter";
 import { Container } from "./styles";
 import { useAuth } from "../../hooks/auth";
 import {ReactSVG} from "react-svg"
+import { Link } from 'react-router-dom';
+
 // import { api } from "../../services/api";
 
 export function CardDish({ to, name, price, src, icon }) {
@@ -11,19 +13,21 @@ export function CardDish({ to, name, price, src, icon }) {
   const role = logged.user.role;
 
   return (
-    <Container to={to}>
+    <Container>
       <ReactSVG className="iconCard" src={icon}/>
-      <img src={src} alt="" />
-      <span>
-        <h3>{name}</h3>
-        <p>R$ {price.toFixed(2)}</p>
-      </span>
-      {role === "costumer" && (
-        <>
+      <Link  to={to}>
+        <img id="imageDish" src={src} alt="" />
+        <span>
+          <h3>{name}</h3>
+          <p>R$ {price.toFixed(2)}</p>
+        </span>
+      </Link>
+      {role === "costumer" && 
+        <div id="submitOrder">
           <InputCounter />
           <Button title={"incluir"} />
-        </>
-      )}
+        </div>
+      }
     </Container>
   );
 }

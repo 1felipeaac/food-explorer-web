@@ -22,7 +22,7 @@ export function InputCounter(){
     return(
         <Container>
             <button id="minun" onClick={decrement}><img src={minun} alt="icon minun" /></button>
-            <div className="counter">{count}</div>
+            <span className="counter">{count}</span>
             <button id="plus" onClick={increment}><img src={plus} alt="icon plus" /></button>
         </Container>
     )

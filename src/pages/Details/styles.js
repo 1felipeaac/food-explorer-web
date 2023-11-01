@@ -12,7 +12,7 @@ export const Container = styled.div`
     flex-direction: column;
     width: 100%;
 
-    margin-top: 8rem;
+    margin-top: 10rem;
     margin-bottom: 5.5rem;
 
     a {
@@ -33,6 +33,8 @@ export const Container = styled.div`
       #dishDetails {
         width: 100%;
 
+        padding: 0 2rem;
+
         display: flex;
         flex-direction: column;
 
@@ -44,8 +46,21 @@ export const Container = styled.div`
           flex-wrap: wrap;
           width: 100%;
         }
+
+        #submitCostumer{
+          display: flex;
+          justify-content: space-around;
+
+          max-width: 18.38rem;
+          div{
+            img{
+              width: 1.125rem;
+            }
+          }
+        }
+
         button {
-          background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_100};
+          /* background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_100}; */
           max-width: 8.18rem;
           height: 3rem;
         }
@@ -70,6 +85,15 @@ export const Container = styled.div`
 
           section {
             justify-content: center;
+          }
+
+          #submitCostumer{
+            max-width: none;
+            width: 100%;
+            #submitButton{
+              max-width: 11.75rem;
+              width: 100%;
+            }
           }
         }
       }
