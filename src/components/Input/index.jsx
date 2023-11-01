@@ -13,7 +13,10 @@ export function Input({
 }) {
   return (
     <Container id={idContainer}>
-      <label htmlFor={id}>{[icon, title]}</label>
+      <label htmlFor={id}>
+        <span>{icon}</span>
+        {title}
+      </label>
 
       <input
         onChange={onChange}

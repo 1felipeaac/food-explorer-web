@@ -18,6 +18,9 @@ import { Ingredients } from "../../../components/Ingredients";
 import { ReactSVG } from "react-svg";
 import { useParams } from "react-router-dom";
 
+import upload from "../../../assets/upload.svg";
+
+
 import arrowLeft from "../../../assets/arrowLeft.svg";
 
 export function EditDish() {
@@ -27,6 +30,8 @@ export function EditDish() {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [value, setValue] = useState("");
+  const [image, setImage] = useState(null);
+
 
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
@@ -76,6 +81,7 @@ export function EditDish() {
         return alert("Ingrediente(s) não adicionado");
       }
       await api.put(`/dishes/${params.id}`, {
+        image,
         name,
         category,
         description,
@@ -112,7 +118,7 @@ export function EditDish() {
       <HeaderMobile />
 
       {data && (
-        <div id="formDish">
+        <div id="edit-formDish">
           <Hyperlink
             icon={<ReactSVG src={arrowLeft} />}
             title={"Voltar"}
@@ -122,11 +128,18 @@ export function EditDish() {
           <h1>Editar prato</h1>
 
           <Input
+          idContainer={"edit-inputImageComponent"}
+          id={"edit-inputImage"}
+          icon={<ReactSVG src={upload}/>}
             title={"Imagem do prato"}
             type={"file"}
             placeholder={"Selecione imagem"}
+          onChange={(e) => setImage(e.target.files[0])}
+
           />
           <Input
+          idContainer={"edit-inputNameComponent"}
+          id={"edit-inputName"}
             title={"Nome"}
             type={"text"}
             placeholder={"Ex.: Cuscuz"}
@@ -137,23 +150,28 @@ export function EditDish() {
             onChange={(e) => setCategory(e.target.value)}
             value={category}
           />
-          <section>
-            {ingredients.map((ingredient, index) => (
+          <div id="edit-Tags">
+            <label>Ingredientes</label>
+            <section>
+              {ingredients.map((ingredient, index) => (
+                <Ingredients
+                  key={String(index)}
+                  value={ingredient}
+                  onClick={() => handleRemoveIngredients(ingredient)}
+                />
+              ))}
               <Ingredients
-                key={String(index)}
-                value={ingredient}
-                onClick={() => handleRemoveIngredients(ingredient)}
+                isNew
+                value={newIngredient}
+                placeholder="Novo ingrediente"
+                onChange={(e) => setNewIngredient(e.target.value)}
+                onClick={handleAddIngredients}
               />
-            ))}
-            <Ingredients
-              isNew
-              value={newIngredient}
-              placeholder="Novo ingrediente"
-              onChange={(e) => setNewIngredient(e.target.value)}
-              onClick={handleAddIngredients}
-            />
-          </section>
+            </section>
+          </div>
           <Input
+          idContainer={"edit-inputValueComponent"}
+          id={"edit-inputValue"}
             title={"Preço"}
             type={"number"}
             placeholder={"R$00,00"}
@@ -161,13 +179,14 @@ export function EditDish() {
             value={value}
           />
           <Textarea
+            id={"edit-textareaForm"}
             placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
             onChange={(e) => setDescription(e.target.value)}
             value={description}
           />
           <div id="buttons">
-            <Button title={"Excluir prato"} onClick={handleRemove} />
-            <Button title={"Salvar Alterações"} onClick={handleEditDish} />
+            <Button id={"deleteButton"} title={"Excluir prato"} onClick={handleRemove} />
+            <Button id={"saveButton"} title={"Salvar Alterações"} onClick={handleEditDish} />
           </div>
         </div>
       )}

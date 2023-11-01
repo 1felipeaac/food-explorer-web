@@ -146,8 +146,8 @@ export const Container = styled.div`
         max-height: 12rem;
       }
       #imgHome {
-        top: 10rem;
-        max-height: 14.3rem;
+        top: 9rem;
+        max-height: 13.3rem;
       }
       #presentation {
         top: 15rem;

@@ -5,9 +5,24 @@ export const Container = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
     height: 18.5rem;
-    width: 13.125rem;
+    max-width: 13.125rem;
+
+    border: 1px solid red;
+
+    position: relative;
+
+
+    /* padding: 2rem 0; */
+
+    .iconCard{
+        width: 1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
     img{
         width: 4rem;
     }

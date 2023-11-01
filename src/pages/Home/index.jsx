@@ -9,6 +9,9 @@ import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { Menu } from "../../Components/MobileMenu";
 import empty from "../../assets/default-dish.svg"
+import favorite from "../../assets/favorite.svg"
+import edit from "../../assets/edit.svg"
+import { useAuth } from "../../hooks/auth";
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
@@ -18,7 +21,9 @@ export function Home() {
   const [messageError, setMessageError] = useState("");
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  // const [imageUrl, setImageUrl] = useState("")
+  
+  const logged = useAuth();
+  const role = logged.user.role;
 
   function handleSearch(value) {
     setDishesFound([]);
@@ -26,11 +31,6 @@ export function Home() {
     setVisible(true);
     setMessageError("");
   }
-
-  // function getImages(img){
-  //   const response = api.defaults.baseURL.get(`/files/${img}`);
-  //   console.log(response)
-  // }
 
   useEffect(() => {
     setErrorCheck(false);
@@ -90,6 +90,7 @@ export function Home() {
             ? dishes &&
               dishes.map((dish) => (
                 <CardDish
+                  icon={role === 'admin' ? edit: favorite}
                   to={`details/${dish.id}`}
                   key={dish.id}
                   name={dish.name}
