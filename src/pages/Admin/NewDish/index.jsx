@@ -64,7 +64,7 @@ export function NewDish() {
       if (!value) {
         return alert("Preço não adicionado");
       }
-      if (!newIngredient) {
+      if (newIngredient) {
         return alert("Ingrediente(s) não adicionado");
       }
 
