@@ -25,6 +25,10 @@ export function Home() {
   const logged = useAuth();
   const role = logged.user.role;
 
+  function getUrl(url){
+    return `${api.defaults.baseURL}/files/${url}`
+  }
+
   function handleSearch(value) {
     setDishesFound([]);
     setSearchValue(value);
@@ -56,11 +60,6 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data.dishes);
-
-      
-      // setImageUrl(api.defaults.baseURL/files/)
-  // const imageUrl = `${api.defaults.baseURL/files/${}}`
-
     }
     setDishesFound([]);
     fetchDishes();
@@ -96,7 +95,7 @@ export function Home() {
                   name={dish.name}
                   price={dish.value}
                   src={
-                    dish.image ? `${api.defaults.baseURL}/files/${dish.image}`: empty
+                    dish.image ? getUrl(dish.image): empty
                   }
                 />
               ))
@@ -109,7 +108,16 @@ export function Home() {
           <div id="searchDishes">
             {Array.isArray(dishesFound) &&
               dishesFound.map((dish) => (
-                <CardDish key={dish.id} name={dish.name} price={dish.value} />
+                <CardDish
+                  icon={role === 'admin' ? edit: favorite}
+                  to={`details/${dish.id}`} 
+                  key={dish.id} 
+                  name={dish.name} 
+                  price={dish.value}
+                  src={
+                    dish.image ? getUrl(dish.image): empty
+                  } 
+                />
               ))}
           </div>
         )}

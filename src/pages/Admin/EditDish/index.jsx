@@ -20,7 +20,6 @@ import { useParams } from "react-router-dom";
 
 import upload from "../../../assets/upload.svg";
 
-
 import arrowLeft from "../../../assets/arrowLeft.svg";
 
 export function EditDish() {
@@ -114,8 +113,6 @@ export function EditDish() {
       setDescription(dish.description);
       setValue(dish.value);
       setIngredients(ingredients.map((ingredient) => ingredient));
-
-      // ingredients.map((ingredient) =>console.log(ingredient))
     }
     fetchDish();
   }, []);

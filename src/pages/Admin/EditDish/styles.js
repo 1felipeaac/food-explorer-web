@@ -9,11 +9,6 @@ export const Container = styled.div`
   gap: 1.5rem;
   min-height: 100%;
 
-  /* header {
-    position: fixed;
-    z-index: 2;
-  } */
-
   #edit-formDish {
     margin-top: 7.5rem;
     margin-bottom: 5.5rem;
@@ -45,7 +40,6 @@ export const Container = styled.div`
 
     #edit-inputImageComponent {
       grid-area: image;
-      /* background-color: white; */
       label {
         background-color: ${({ theme }) => theme.COLORS.DARK._800};
         color: #${({ theme }) => theme.COLORS.LIGHT._100};
@@ -54,13 +48,10 @@ export const Container = styled.div`
         margin-top: 1.6rem;
         padding: 0.5rem 1rem;
         cursor: pointer;
-      /* background-color: white; */
-
       }
     }
 
     input[type="file"] {
-      /* background-color: red; */
       display: none;
     }
 
@@ -76,7 +67,6 @@ export const Container = styled.div`
     }
     #edit-Tags {
       grid-area: ingredients;
-      /* background-color: ${({ theme }) => theme.COLORS.DARK._800}; */
 
       section {
         background-color: ${({ theme }) => theme.COLORS.DARK._800};
@@ -100,7 +90,6 @@ export const Container = styled.div`
 
     #edit-textareaForm {
       grid-area: description;
-      /* background-color: ${({ theme }) => theme.COLORS.DARK._800}; */
     }
 
     #buttons{
@@ -108,7 +97,6 @@ export const Container = styled.div`
 
       display: flex;
       align-items: center;
-      /* justify-content: space-around; */
       gap: 2rem;
 
       button{

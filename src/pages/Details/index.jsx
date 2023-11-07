@@ -17,7 +17,6 @@ import { InputCounter } from "../../Components/InputCounter";
 
 export function Details() {
   const [data, setData] = useState(null);
-  // const [ingerdients, setIngredients] = useState([])
   const params = useParams();
   const logged = useAuth();
   const role = logged.user.role;
@@ -26,7 +25,6 @@ export function Details() {
     async function fetchDish() {
       const response = await api.get(`dishes/${params.id}`);
       setData(response.data);
-      // console.log(response);
     }
 
     fetchDish();

@@ -2,12 +2,6 @@
 import { Container, InputSearch } from "./styles";
 import iconSearch from "../../assets/search.svg";
 export function Search({ onSearch }) {
-
-
-  // function handleSearchChange(e) {
-  //   const searchValue = e.target.value;
-  //   onSearch(searchValue);
-  // }
   
   return (
     <Container>

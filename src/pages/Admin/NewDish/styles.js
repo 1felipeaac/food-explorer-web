@@ -47,7 +47,6 @@ export const Container = styled.div`
 
     #inputImageComponent {
       grid-area: image;
-      /* background-color: white; */
       label {
         background-color: ${({ theme }) => theme.COLORS.DARK._800};
         color: #${({ theme }) => theme.COLORS.LIGHT._100};
@@ -60,7 +59,6 @@ export const Container = styled.div`
     }
 
     input[type="file"] {
-      /* background-color: red; */
       display: none;
     }
     #inputNameComponent {
@@ -75,7 +73,6 @@ export const Container = styled.div`
     }
     #tags {
       grid-area: ingredients;
-      /* background-color: ${({ theme }) => theme.COLORS.DARK._800}; */
 
       section {
         background-color: ${({ theme }) => theme.COLORS.DARK._800};
@@ -99,7 +96,6 @@ export const Container = styled.div`
 
     #textareaForm {
       grid-area: description;
-      /* background-color: ${({ theme }) => theme.COLORS.DARK._800}; */
     }
 
     #buttonForm {

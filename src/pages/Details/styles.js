@@ -60,8 +60,7 @@ export const Container = styled.div`
         }
 
         button {
-          /* background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_100}; */
-          max-width: 8.18rem;
+          max-width: 9.18rem;
           height: 3rem;
         }
       }
@@ -77,6 +76,10 @@ export const Container = styled.div`
     main {
       flex-direction: column;
 
+      a {
+        padding: 0 1.5rem;
+      }
+
       #contentDetails {
         flex-direction: column;
         align-items: center;
@@ -88,7 +91,6 @@ export const Container = styled.div`
           }
 
           #submitCostumer{
-            max-width: none;
             width: 100%;
             #submitButton{
               max-width: 11.75rem;
@@ -99,6 +101,4 @@ export const Container = styled.div`
       }
     }
   }
-
-  /* background-color: red; */
 `;

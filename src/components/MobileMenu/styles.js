@@ -15,9 +15,7 @@ export const Container = styled.div`
     gap: 3.6rem;
 
     padding: 3.6rem 2.8rem;
-
-    margin: 0;
-
+    
     span {
       max-width: none;
       width: 100%;
@@ -30,7 +28,6 @@ export const Container = styled.div`
       }
 
       input{
-        /* width: 100%; */
         max-width: none;
       }
     }
@@ -42,7 +39,6 @@ export const Container = styled.div`
       line-height: 140%;
       border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK._1000};
       width: 100%;
-      /* background-color: red; */
     }
   }
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {    
