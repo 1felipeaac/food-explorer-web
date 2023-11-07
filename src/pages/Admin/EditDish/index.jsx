@@ -80,13 +80,21 @@ export function EditDish() {
       if (newIngredient) {
         return alert("Ingrediente(s) não adicionado");
       }
-      await api.put(`/dishes/${params.id}`, {
-        image,
-        name,
-        category,
-        description,
-        ingredients,
-        value,
+
+      const formData = new FormData();
+
+      formData.append("image", image);
+      formData.append("name", name);
+      formData.append("category", category);
+      formData.append("ingredients", ingredients);
+      formData.append("value", value);
+      formData.append("description", description);
+      await api.put(`/dishes/${params.id}`, formData, {
+        headers:{
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       });
       alert("Prato atualizado com sucesso");
       handleBack();

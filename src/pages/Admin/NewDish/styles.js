@@ -129,6 +129,10 @@ export const Container = styled.div`
           width: 100%;
         }
       }
+
+      #description{
+        height: 10rem;
+      }
     }
   }
 `;
