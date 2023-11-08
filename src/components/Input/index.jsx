@@ -9,6 +9,7 @@ export function Input({
   type,
   onChange,
   icon,
+  required,
   ...rest
 }) {
   return (
@@ -24,6 +25,7 @@ export function Input({
         name={id}
         id={id}
         placeholder={placeholder}
+        required={required}
         {...rest}
       />
     </Container>

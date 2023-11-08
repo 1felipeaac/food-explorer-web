@@ -31,7 +31,6 @@ export function EditDish() {
   const [value, setValue] = useState("");
   const [image, setImage] = useState(null);
 
-
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
@@ -54,7 +53,7 @@ export function EditDish() {
     const confirm = window.confirm("Tem certeza que quer excluir o prato");
     if (confirm) {
       await api.delete(`/dishes/${params.id}`);
-      navigate("/")
+      navigate("/");
     }
   }
 
@@ -82,18 +81,18 @@ export function EditDish() {
 
       const formData = new FormData();
 
-      formData.append("image", image);
+      if (image) {
+        formData.append("image", image);
+      }
       formData.append("name", name);
       formData.append("category", category);
       formData.append("ingredients", ingredients);
       formData.append("value", value);
       formData.append("description", description);
-      await api.put(`/dishes/${params.id}`, formData, {
-        headers:{
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+      await api.patch(`/dishes/${params.id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       alert("Prato atualizado com sucesso");
       handleBack();
@@ -112,7 +111,10 @@ export function EditDish() {
       setCategory(dish.category);
       setDescription(dish.description);
       setValue(dish.value);
+      setImage(dish.image);
       setIngredients(ingredients.map((ingredient) => ingredient));
+
+      // console.log(dish);
     }
     fetchDish();
   }, []);
@@ -133,18 +135,18 @@ export function EditDish() {
           <h1>Editar prato</h1>
 
           <Input
-          idContainer={"edit-inputImageComponent"}
-          id={"edit-inputImage"}
-          icon={<ReactSVG src={upload}/>}
+            idContainer={"edit-inputImageComponent"}
+            id={"edit-inputImage"}
+            icon={<ReactSVG src={upload} />}
             title={"Imagem do prato"}
             type={"file"}
             placeholder={"Selecione imagem"}
-          onChange={(e) => setImage(e.target.files[0])}
-
+            onChange={(e) => setImage(e.target.files[0])}
+            required={false}
           />
           <Input
-          idContainer={"edit-inputNameComponent"}
-          id={"edit-inputName"}
+            idContainer={"edit-inputNameComponent"}
+            id={"edit-inputName"}
             title={"Nome"}
             type={"text"}
             placeholder={"Ex.: Cuscuz"}
@@ -175,8 +177,8 @@ export function EditDish() {
             </section>
           </div>
           <Input
-          idContainer={"edit-inputValueComponent"}
-          id={"edit-inputValue"}
+            idContainer={"edit-inputValueComponent"}
+            id={"edit-inputValue"}
             title={"Preço"}
             type={"number"}
             placeholder={"R$00,00"}
@@ -190,8 +192,16 @@ export function EditDish() {
             value={description}
           />
           <div id="buttons">
-            <Button id={"deleteButton"} title={"Excluir prato"} onClick={handleRemove} />
-            <Button id={"saveButton"} title={"Salvar Alterações"} onClick={handleEditDish} />
+            <Button
+              id={"deleteButton"}
+              title={"Excluir prato"}
+              onClick={handleRemove}
+            />
+            <Button
+              id={"saveButton"}
+              title={"Salvar Alterações"}
+              onClick={handleEditDish}
+            />
           </div>
         </div>
       )}
