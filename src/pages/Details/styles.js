@@ -12,8 +12,10 @@ export const Container = styled.div`
     flex-direction: column;
     width: 100%;
 
-    margin-top: 10rem;
+    margin-top: 9rem;
     margin-bottom: 5.5rem;
+
+    gap: 1rem;
 
     a {
       line-height: 0;

@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 
 // import { api } from "../../services/api";
 
-export function CardDish({ to, name, price, src, icon }) {
+export function CardDish({ to, name, price, src, icon, className }) {
   const logged = useAuth();
   const role = logged.user.role;
 
   return (
-    <Container>
+    <Container className={className}>
       <ReactSVG className="iconCard" src={icon}/>
       <Link  to={to}>
         <img id="imageDish" src={src} alt="" />

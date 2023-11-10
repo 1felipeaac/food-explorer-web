@@ -8,7 +8,9 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    max-width: 13.125rem;
+    /* max-width: 13.125rem; */
+
+    /* border: 1px solid green; */
 
     position: relative;
 
@@ -19,7 +21,7 @@ export const Container = styled.div`
     .iconCard{
         width: 1rem;
         position: absolute;
-        right: 0;
+        right: 1rem;
         top: 0;
     }
 

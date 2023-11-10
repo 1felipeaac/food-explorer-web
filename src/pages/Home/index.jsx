@@ -8,10 +8,16 @@ import home from "../../assets/homeImg.svg";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { Menu } from "../../Components/MobileMenu";
-import empty from "../../assets/default-dish.svg"
-import favorite from "../../assets/favorite.svg"
-import edit from "../../assets/edit.svg"
+import empty from "../../assets/default-dish.svg";
+import favorite from "../../assets/favorite.svg";
+import edit from "../../assets/edit.svg";
 import { useAuth } from "../../hooks/auth";
+
+// import React from "react";
+// import "keen-slider/keen-slider.min.css";
+// import { useKeenSlider } from "keen-slider/react";
+
+import { Slider } from "../../components/Slider";
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
@@ -21,12 +27,12 @@ export function Home() {
   const [messageError, setMessageError] = useState("");
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  
+
   const logged = useAuth();
   const role = logged.user.role;
 
-  function getUrl(url){
-    return `${api.defaults.baseURL}/files/${url}`
+  function getUrl(url) {
+    return `${api.defaults.baseURL}/files/${url}`;
   }
 
   function handleSearch(value) {
@@ -64,6 +70,9 @@ export function Home() {
     setDishesFound([]);
     fetchDishes();
   }, []);
+
+  const array = [1, 2, 3, 4, 5, 6];
+
   return (
     <Container>
       <HeaderDesktop onSearch={handleSearch} />
@@ -84,23 +93,7 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </span>
         </div>
-        <div id="showDishes">
-          {visible
-            ? dishes &&
-              dishes.map((dish) => (
-                <CardDish
-                  icon={role === 'admin' ? edit: favorite}
-                  to={`details/${dish.id}`}
-                  key={dish.id}
-                  name={dish.name}
-                  price={dish.value}
-                  src={
-                    dish.image ? getUrl(dish.image): empty
-                  }
-                />
-              ))
-            : undefined}
-        </div>
+        {visible ? <Slider arrayCategory={dishes} role={role} /> : undefined}
 
         {errorCheck ? (
           <div id="errorMessage">{messageError}</div>
@@ -109,14 +102,12 @@ export function Home() {
             {Array.isArray(dishesFound) &&
               dishesFound.map((dish) => (
                 <CardDish
-                  icon={role === 'admin' ? edit: favorite}
-                  to={`details/${dish.id}`} 
-                  key={dish.id} 
-                  name={dish.name} 
+                  icon={role === "admin" ? edit : favorite}
+                  to={`details/${dish.id}`}
+                  key={dish.id}
+                  name={dish.name}
                   price={dish.value}
-                  src={
-                    dish.image ? getUrl(dish.image): empty
-                  } 
+                  src={dish.image ? getUrl(dish.image) : empty}
                 />
               ))}
           </div>

@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "axios": "^1.5.1",
+    "keen-slider": "^6.8.6",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.16.0",
+    "react-slick": "^0.29.0",
     "react-svg": "^16.1.29",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.8"
   },
   "devDependencies": {
