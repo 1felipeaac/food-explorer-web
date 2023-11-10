@@ -10,20 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.5.1",
     "framer-motion": "^10.16.4",
     "framer-motion-carousel": "^2.0.4",
-    "keen-slider": "^6.8.6",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
+    "react-alice-carousel": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.16.0",
     "react-slick": "^0.29.0",
     "react-svg": "^16.1.29",
-    "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.8",
-    "swiper": "^7.4.1"
+    "swiper": "^11.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -35,8 +35,5 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "nodemon": "^3.0.1",
     "vite": "^4.4.5"
-  },
-  "tags": [
-    "swiper"
-  ]
+  }
 }
