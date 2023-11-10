@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react"; 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { Container } from "./styles";
@@ -12,7 +13,7 @@ import { api } from "../../services/api";
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
-export function Slider({ arrayCategory, role, changePerView }) {
+export function Slider({ arrayCategory, role }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [perView, setPerView] = useState(3);
   const [spacing, setSpacing] = useState(15);

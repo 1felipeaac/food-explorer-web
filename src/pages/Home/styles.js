@@ -24,7 +24,8 @@ export const Container = styled.div`
     margin-top: 7.5rem;
     margin-bottom: 5rem;
 
-    width: 100%;
+    width: 100vw;
+
 
     #display {
       display: flex;
@@ -60,6 +61,21 @@ export const Container = styled.div`
           font-weight: 400;
         }
       }
+    }
+
+    .slider{
+      cursor: grab;
+      max-width: 62rem;
+      border: 1px solid red;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .innerSlider{
+      display: flex;
+      width: 100vw;
+      gap: 3rem;
     }
 
     #showDishes {

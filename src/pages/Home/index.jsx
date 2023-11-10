@@ -6,18 +6,25 @@ import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";
 
 import { api } from "../../services/api";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Menu } from "../../Components/MobileMenu";
 import empty from "../../assets/default-dish.svg";
 import favorite from "../../assets/favorite.svg";
 import edit from "../../assets/edit.svg";
 import { useAuth } from "../../hooks/auth";
 
-// import React from "react";
-// import "keen-slider/keen-slider.min.css";
-// import { useKeenSlider } from "keen-slider/react";
+// import Slider from "react-slick";
 
 import { Slider } from "../../components/Slider";
+
+import {motion} from "framer-motion"
+
+import Carousel from "framer-motion-carousel";
+
+// import {Swiper, SwiperSlide} from "swiper/react"
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
@@ -28,6 +35,25 @@ export function Home() {
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  const [width, setWidth] = useState(0)
+  const [currentPosition, setCurrentPosition] = useState(0);
+
+  function loop(event, info){
+    const dragDistance = info.offset.x
+
+    const size = 10
+
+    // console.log(dragDistance)
+
+    if (dragDistance > size){
+      setCurrentPosition(currentPosition - width)
+    } else if (dragDistance < -size) {
+      setCurrentPosition(currentPosition + width)
+    }
+  }
+
+  const slider = useRef()
+  
   const logged = useAuth();
   const role = logged.user.role;
 
@@ -70,8 +96,10 @@ export function Home() {
     setDishesFound([]);
     fetchDishes();
   }, []);
-
-  const array = [1, 2, 3, 4, 5, 6];
+  useEffect(() => {
+    setWidth(slider.current?.scrollWidth - slider.current?.offsetWidth)
+    // console.log(width)
+  }, []);
 
   return (
     <Container>
@@ -94,6 +122,32 @@ export function Home() {
           </span>
         </div>
         {visible ? <Slider arrayCategory={dishes} role={role} /> : undefined}
+
+        {/* <motion.div 
+          className="slider"
+          
+        >
+          <motion.div 
+            className="innerSlider"
+            ref={slider}
+            whileTap={{cursor: "grabbing"}}
+            drag="x"
+            dragConstraints={{right: 0, left: -width}}
+          >
+            {dishes && dishes.map((dish) => (
+              <CardDish
+                className={"card"}
+                icon={role === "admin" ? edit : favorite}
+                to={`details/${dish.id}`}
+                key={dish.id}
+                name={dish.name}
+                price={dish.value}
+                src={dish.image ? getUrl(dish.image) : empty}
+              />
+            ))}
+          </motion.div>
+        </motion.div> */}
+
 
         {errorCheck ? (
           <div id="errorMessage">{messageError}</div>
