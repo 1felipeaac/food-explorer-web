@@ -11,11 +11,6 @@ export const Container = styled.div`
 
   --banner-height: 16rem;
 
-  /* > header {
-    position: fixed;
-    z-index: 2;
-  } */
-
   main {
     display: flex;
     flex-direction: column;
@@ -49,33 +44,16 @@ export const Container = styled.div`
 
       #imgHome {
         position: absolute;
-        /* left: 0; */
         height: calc(var(--banner-height) + 6rem);
       }
       #presentation {
         position: absolute;
-        /* right: clamp(0.3rem, 5rem + 7vw, 5rem); */
         z-index: 1;
 
         > p {
           font-weight: 400;
         }
       }
-    }
-
-    .slider{
-      cursor: grab;
-      max-width: 62rem;
-      border: 1px solid red;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .innerSlider{
-      display: flex;
-      width: 100vw;
-      gap: 3rem;
     }
 
     #showDishes {
@@ -122,7 +100,6 @@ export const Container = styled.div`
       }
 
       #presentation {
-        /* right: clamp(0.3rem, 5rem + 7vw, 15rem); */
         padding-top: 4.5rem;
         top: 20rem;
         right: 13rem;
@@ -130,6 +107,30 @@ export const Container = styled.div`
           font-size: 2.5rem;
           font-weight: 500;
         }
+      }
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XXXG}) {
+    #display{
+      #presentation {
+        right: 27rem;
+      }
+
+      #imgHome{
+        left: 20rem;
+      }
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XXG}) {
+    #display{
+      #presentation {
+        right: 12rem;
+      }
+
+      #imgHome{
+        left: 5rem;
       }
     }
   }

@@ -17,11 +17,7 @@ function AuthProvider({ children }) {
         {withCredentials: true}
       );
 
-      console.log(response)
-
       const { user } = response.data;
-
-      console.log(user);
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
 

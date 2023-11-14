@@ -6,7 +6,7 @@ import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";
 
 import { api } from "../../services/api";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "../../Components/MobileMenu";
 import empty from "../../assets/default-dish.svg";
 import favorite from "../../assets/favorite.svg";
@@ -17,10 +17,10 @@ import { Slider } from "../../components/Slider";
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
-  const [dishesFound, setDishesFound] = useState([]);
   const [errorCheck, setErrorCheck] = useState(false);
   const [messageError, setMessageError] = useState("");
+  const [dishesFound, setDishesFound] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 

@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
 
-  main {
+  #mainDetails {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -41,6 +41,7 @@ export const Container = styled.div`
         flex-direction: column;
 
         gap: 1.5rem;
+
         section {
           display: flex;
 
@@ -75,11 +76,15 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
-    main {
+    #mainDetails {
       flex-direction: column;
 
       a {
         padding: 0 1.5rem;
+      }
+
+      p{
+          text-align: center;
       }
 
       #contentDetails {

@@ -8,13 +8,13 @@ export const Container = styled.div`
 
   max-width: 70rem;
   margin-top: 5rem;
-  /* height: 30rem; */
 
-  /* border: 1px solid red; */
 
   .swiper-button-next,
   .swiper-button-prev {
     color: ${({theme})=> theme.COLORS.LIGHT._100};
+
+    top: var(--swiper-navigation-top-offset, 40%);
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
-// import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -8,15 +7,15 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  /* max-width: 13.125rem; */
-
-  /* border: 1px solid green; */
 
   position: relative;
   max-width: 19rem;
   width: 100%;
 
   padding: 2rem 0;
+
+  margin-left: auto;
+  margin-right: auto;
 
   .iconCard {
     width: 1rem;

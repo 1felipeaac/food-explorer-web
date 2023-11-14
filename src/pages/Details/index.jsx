@@ -3,23 +3,37 @@ import { HeaderMobile } from "../../components/Header/Mobile";
 import { Hyperlink } from "../../components/Hyperlink";
 import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
+import { Menu } from "../../components/MobileMenu";
 import { Container } from "./styles";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { ReactSVG } from "react-svg";
-import back from "../../assets/arrowLeft.svg";
 import { Tags } from "../../components/Tags";
 import empty from "../../assets/default-dish.svg";
+import back from "../../assets/arrowLeft.svg";
 
 import {useAuth} from '../../hooks/auth'
 import { InputCounter } from "../../Components/InputCounter";
 
 export function Details() {
   const [data, setData] = useState(null);
+  const [messageError, setMessageError] = useState("");
+  const [dishesFound, setDishesFound] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  const [visible, setVisible] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   const params = useParams();
   const logged = useAuth();
   const role = logged.user.role;
+
+  function handleSearch(value) {
+    setDishesFound([]);
+    setSearchValue(value);
+    setVisible(true);
+    setMessageError("");
+  }
 
   useEffect(() => {
     async function fetchDish() {
@@ -32,10 +46,17 @@ export function Details() {
 
   return (
     <Container>
-      <HeaderMobile />
-      <HeaderDesktop />
+      <HeaderDesktop onSearch={handleSearch} />
+      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
+      <Menu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+        id="mobileMenu"
+        onSearch={handleSearch}
+        title={"Sair"}
+      />
       {data && (
-        <main>
+        <main id="mainDetails">
           <Hyperlink icon={<ReactSVG src={back} />} to={"/"} title={"voltar"} />
           <div id="contentDetails">
             <img
