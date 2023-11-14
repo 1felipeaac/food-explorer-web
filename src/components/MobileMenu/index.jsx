@@ -10,19 +10,21 @@ import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Hyperlink } from "../Hyperlink";
 
-export function Menu({ onSearch, id, menuIsOpen, onCloseMenu }) {
+import { useLocation } from "react-router-dom";
 
+export function Menu({ onSearch, id, menuIsOpen, onCloseMenu }) {
   const { signOut } = useAuth();
   const navigate = useNavigate();
 
   const logged = useAuth();
   const role = logged.user.role;
 
+  const location = useLocation();
+
   function logOut() {
     signOut();
     navigate("/");
   }
-
 
   return (
     <Container id={id} data-menu-is-open={menuIsOpen}>
@@ -33,12 +35,15 @@ export function Menu({ onSearch, id, menuIsOpen, onCloseMenu }) {
         <h1>Menu</h1>
       </Header>
       <main>
-        <Search onSearch={onSearch} />
-        {role === "admin" ? (
+        {!location.pathname.includes("/details") &&
+          !location.pathname.includes("/editDish") &&
+          !location.pathname.includes("/newDish") && (
+            <Search onSearch={onSearch} />
+          )}
+        {role === "admin" && !location.pathname.includes("/newDish") ? (
           <Hyperlink title={"Novo prato"} to={"/newDish"} />
         ) : null}
         <Hyperlink onClick={logOut} title={"Sair"} />
-
       </main>
       <Footer />
     </Container>

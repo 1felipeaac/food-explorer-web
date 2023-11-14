@@ -5,8 +5,8 @@ import { api } from "../../../services/api";
 
 import { useNavigate } from "react-router-dom";
 
-import { Hyperlink } from "../../../components/Hyperlink";
-import { Footer } from "../../../components/Footer";
+import { Hyperlink } from "../../../Components/Hyperlink";
+import { Footer } from "../../../Components/Footer";
 import { HeaderDesktop } from "../../../components/Header/Desktop";
 import { HeaderMobile } from "../../../components/Header/Mobile";
 import { Container } from "./styles";
@@ -15,6 +15,7 @@ import { Select } from "../../../components/Select";
 import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
+import { Menu } from "../../../components/MobileMenu";
 import { ReactSVG } from "react-svg";
 import { useParams } from "react-router-dom";
 
@@ -33,6 +34,8 @@ export function EditDish() {
 
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -121,8 +124,13 @@ export function EditDish() {
 
   return (
     <Container>
-      <HeaderDesktop />
-      <HeaderMobile />
+      <HeaderDesktop/>
+      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
+      <Menu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+        id="mobileMenu"
+      />
 
       {data && (
         <div id="edit-formDish">

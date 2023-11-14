@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   display: none;
-  background: ${({theme}) => theme.COLORS.DARK._300};
-  
+  background: ${({ theme }) => theme.COLORS.DARK._300};
+
   width: 100vw;
   height: 100vh;
 
@@ -15,7 +15,11 @@ export const Container = styled.div`
     gap: 3.6rem;
 
     padding: 3.6rem 2.8rem;
-    
+
+    margin-top: 7.5rem;
+    margin-bottom: 5rem;
+    width: 100%;
+
     span {
       max-width: none;
       width: 100%;
@@ -27,7 +31,7 @@ export const Container = styled.div`
         padding: 1.2rem 1.4rem;
       }
 
-      input{
+      input {
         max-width: none;
       }
     }
@@ -41,7 +45,7 @@ export const Container = styled.div`
       width: 100%;
     }
   }
-  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {    
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     position: absolute;
     z-index: 2;
     display: flex;
@@ -49,7 +53,7 @@ export const Container = styled.div`
     align-items: center;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    &[data-menu-is-open="true"]{
+    &[data-menu-is-open="true"] {
       transform: translateX(0);
     }
   }

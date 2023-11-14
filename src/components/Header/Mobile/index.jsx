@@ -2,16 +2,15 @@
 /* eslint-disable react/jsx-no-undef */
 import { Container, Buttons } from "./styles";
 import { Logo } from "../../Logo";
+import { useAuth } from "../../../hooks/auth";
+
 import menu from "../../../assets/menu.svg";
 import receipt from "../../../assets/receipt.svg";
-import { useAuth } from "../../../hooks/auth";
-  
 
 
 export function HeaderMobile({onOpenMenu}) {
   const logged = useAuth();
   const role = logged.user.role;
-  
   return (
     <Container className="mobile">
       <nav>

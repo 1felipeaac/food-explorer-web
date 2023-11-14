@@ -7,7 +7,7 @@ export function Search({ onSearch }) {
     <Container>
       <img src={iconSearch} alt="icone de pesquisa" />
       <InputSearch
-        id="inputSearch"
+        className="inputSearch"
         onChange={(e) => onSearch(e.target.value)}
         type="text"
         placeholder=" Buscar por pratos ou ingredientes"

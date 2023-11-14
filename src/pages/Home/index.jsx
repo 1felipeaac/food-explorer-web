@@ -1,16 +1,10 @@
-import { HeaderMobile } from "../../components/Header/Mobile";
-import { HeaderDesktop } from "../../components/Header/Desktop";
-import { Footer } from "../../components/Footer";
-import { CardDish } from "../../components/CardDish";
+import { Header } from "../../components/Header";
+import { Footer } from "../../Components/Footer";
 import { Container } from "./styles";
 import home from "../../assets/homeImg.svg";
 
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
-import { Menu } from "../../Components/MobileMenu";
-import empty from "../../assets/default-dish.svg";
-import favorite from "../../assets/favorite.svg";
-import edit from "../../assets/edit.svg";
 import { useAuth } from "../../hooks/auth";
 
 import { Slider } from "../../components/Slider";
@@ -26,10 +20,6 @@ export function Home() {
 
   const logged = useAuth();
   const role = logged.user.role;
-
-  function getUrl(url) {
-    return `${api.defaults.baseURL}/files/${url}`;
-  }
 
   function handleSearch(value) {
     setDishesFound([]);
@@ -53,13 +43,14 @@ export function Home() {
 
     async function fetchSearchDish() {
       try {
-        const response = await api.get(`/dishes?name=${searchValue}`);
+        const dish = await api.get(`/dishes?name=${searchValue}`);
 
-        if (response.data.length > 0) {
-          setDishesFound(response.data);
+        if (dish.data.length > 0) {
+          setDishesFound(dish.data);
           setVisible(false);
         }
       } catch (error) {
+        // console.log(error.response.data.message);
         setErrorCheck(true);
         setMessageError(error.response.data.message);
       }
@@ -69,14 +60,11 @@ export function Home() {
 
   return (
     <Container>
-      <HeaderDesktop onSearch={handleSearch} />
-      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
-      <Menu
+      <Header
         menuIsOpen={menuIsOpen}
         onCloseMenu={() => setMenuIsOpen(false)}
-        id="mobileMenu"
+        onOpenMenu={() => setMenuIsOpen(true)}
         onSearch={handleSearch}
-        title={"Sair"}
       />
       <main>
         <div id="display">
@@ -87,23 +75,15 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </span>
         </div>
-        {visible ? dishes && <Slider dishes={dishes} role={role}/> : undefined}
+        {visible ? dishes && <Slider dishes={dishes} role={role} /> : <></>}
 
         {errorCheck ? (
           <div id="errorMessage">{messageError}</div>
         ) : (
           <div id="searchDishes">
-            {Array.isArray(dishesFound) &&
-              dishesFound.map((dish) => (
-                <CardDish
-                  icon={role === "admin" ? edit : favorite}
-                  to={`details/${dish.id}`}
-                  key={dish.id}
-                  name={dish.name}
-                  price={dish.value}
-                  src={dish.image ? getUrl(dish.image) : empty}
-                />
-              ))}
+            {Array.isArray(dishesFound) && (
+              <Slider dishes={dishesFound} role={role} />
+            )}
           </div>
         )}
       </main>

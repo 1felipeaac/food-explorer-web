@@ -73,7 +73,7 @@ export const Container = styled.div`
     #errorMessage {
       background-color: ${({ theme }) => theme.COLORS.TINTS.TOMATO_200};
       position: absolute;
-      top: 7.5rem;
+      top: 9.5rem;
     }
 
     #searchDishes {

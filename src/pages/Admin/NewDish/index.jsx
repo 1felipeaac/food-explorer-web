@@ -6,8 +6,8 @@ import { api } from "../../../services/api";
 
 import { useNavigate } from "react-router-dom";
 
-import { Hyperlink } from "../../../components/Hyperlink";
-import { Footer } from "../../../components/Footer";
+import { Hyperlink } from "../../../Components/Hyperlink";
+import { Footer } from "../../../Components/Footer";
 import { HeaderDesktop } from "../../../components/Header/Desktop";
 import { HeaderMobile } from "../../../components/Header/Mobile";
 import { Container } from "./styles";
@@ -16,6 +16,7 @@ import { Select } from "../../../components/Select";
 import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
+import { Menu } from "../../../components/MobileMenu";
 import { ReactSVG } from "react-svg";
 import { useAuth } from "../../../hooks/auth";
 import upload from "../../../assets/upload.svg";
@@ -32,10 +33,11 @@ export function NewDish() {
   const [category, setCategory] = useState("");
   const [value, setValue] = useState("");
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   const id = useAuth();
 
   const userId = id.user.id;
-  // console.log(userId)
 
   const navigate = useNavigate();
 
@@ -92,7 +94,13 @@ export function NewDish() {
   return (
     <Container>
       <HeaderDesktop />
-      <HeaderMobile />
+      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
+      <Menu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+        id="mobileMenu"
+        title={"Sair"}
+      />
 
       <div id="formDish">
         <Hyperlink
@@ -107,7 +115,7 @@ export function NewDish() {
           idContainer={"inputImageComponent"}
           id={"inputImage"}
           title={"Imagem do Prato"}
-          icon={<ReactSVG src={upload}/>}
+          icon={<ReactSVG src={upload} />}
           type={"file"}
           placeholder={"Selecione imagem"}
           onChange={(e) => setImage(e.target.files[0])}
