@@ -12,6 +12,11 @@ export const Container = styled.div`
 
   /* border: 1px solid red; */
 
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: ${({theme})=> theme.COLORS.LIGHT._100};
+  }
+
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     width: 80vw;
   }
