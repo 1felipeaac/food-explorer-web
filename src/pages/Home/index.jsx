@@ -1,13 +1,14 @@
+import { useEffect, useState } from "react";
+
 import { Header } from "../../components/Header";
-import { Footer } from "../../Components/Footer";
+import { Footer } from "../../components/Footer";
 import { Container } from "./styles";
-import home from "../../assets/homeImg.svg";
+import { Slider } from "../../components/Slider";
 
 import { api } from "../../services/api";
-import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/auth";
 
-import { Slider } from "../../components/Slider";
+import home from "../../assets/homeImg.svg";
 
 export function Home() {
   const [dishes, setDishes] = useState([]);
@@ -51,6 +52,9 @@ export function Home() {
         }
       } catch (error) {
         // console.log(error.response.data.message);
+        if(error.response.request.status === 400){
+          return 
+        }
         setErrorCheck(true);
         setMessageError(error.response.data.message);
       }

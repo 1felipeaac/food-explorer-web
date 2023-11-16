@@ -5,8 +5,8 @@ import { api } from "../../../services/api";
 
 import { useNavigate } from "react-router-dom";
 
-import { Hyperlink } from "../../../Components/Hyperlink";
-import { Footer } from "../../../Components/Footer";
+import { Hyperlink } from "../../../components/Hyperlink";
+import { Footer } from "../../../components/Footer";
 import { HeaderDesktop } from "../../../components/Header/Desktop";
 import { HeaderMobile } from "../../../components/Header/Mobile";
 import { Container } from "./styles";
@@ -107,7 +107,7 @@ export function EditDish() {
   useEffect(() => {
     async function fetchDish() {
       const response = await api.get(`/dishes/${params.id}`);
-      const { dish, ingredients } = response.data;
+      const { dish } = response.data;
 
       setData(response.data);
       setName(dish.name);
@@ -115,9 +115,8 @@ export function EditDish() {
       setDescription(dish.description);
       setValue(dish.value);
       setImage(dish.image);
-      setIngredients(ingredients.map((ingredient) => ingredient));
+      setIngredients(dish.ingredients.map((ingredient) => ingredient));
 
-      // console.log(dish);
     }
     fetchDish();
   }, []);

@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
 import { Container } from "./styles";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CardDish } from "../CardDish";
-import{useEffect, useState} from "react"
-
-
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+
+import { CardDish } from "../CardDish";
+
+import { api } from "../../services/api";
 
 import empty from "../../assets/default-dish.svg";
 import favorite from "../../assets/favorite.svg";
 import edit from "../../assets/edit.svg";
 
-import { api } from "../../services/api";
 
 export function Slider({ dishes, role }) {
   function getUrl(url) {

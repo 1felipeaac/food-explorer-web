@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { BrowserRouter } from "react-router-dom";
+import { useEffect } from "react";
 
 import { AuthRoutes } from "./auth.routes";
-
-import { useAuth } from "../hooks/auth";
 import { CostumerRoutes } from "./costumer.routes";
 import { AdminRoutes } from "./admin.routes";
+
+import { useAuth } from "../hooks/auth";
 import { USER_ROLE } from "../utils/roles";
-import { useEffect } from "react";
 import { api } from "../services/api";
 
 export function Routes(){

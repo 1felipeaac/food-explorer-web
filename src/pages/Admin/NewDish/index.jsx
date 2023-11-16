@@ -6,8 +6,8 @@ import { api } from "../../../services/api";
 
 import { useNavigate } from "react-router-dom";
 
-import { Hyperlink } from "../../../Components/Hyperlink";
-import { Footer } from "../../../Components/Footer";
+import { Hyperlink } from "../../../components/Hyperlink";
+import { Footer } from "../../../components/Footer";
 import { HeaderDesktop } from "../../../components/Header/Desktop";
 import { HeaderMobile } from "../../../components/Header/Mobile";
 import { Container } from "./styles";
@@ -36,8 +36,6 @@ export function NewDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const id = useAuth();
-
-  const userId = id.user.id;
 
   const navigate = useNavigate();
 
