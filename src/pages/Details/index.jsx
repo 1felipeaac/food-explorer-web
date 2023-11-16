@@ -1,6 +1,6 @@
 import { Header } from "../../components/Header";
-import { Hyperlink } from "../../Components/Hyperlink";
-import { Footer } from "../../Components/Footer";
+import { Hyperlink } from "../../components/Hyperlink";
+import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { Container } from "./styles";
 import { useEffect, useState } from "react";
