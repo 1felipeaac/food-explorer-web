@@ -1,20 +1,19 @@
-import { HeaderDesktop } from "../../components/Header/Desktop";
-import { HeaderMobile } from "../../components/Header/Mobile";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Hyperlink } from "../../components/Hyperlink";
 import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
-import { Menu } from "../../components/MobileMenu";
 import { Container } from "./styles";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { ReactSVG } from "react-svg";
 import { Tags } from "../../components/Tags";
+import {Header} from "../../components/Header";
 import empty from "../../assets/default-dish.svg";
 import back from "../../assets/arrowLeft.svg";
 
 import {useAuth} from '../../hooks/auth'
-import { InputCounter } from "../../Components/InputCounter";
+import { InputCounter } from "../../components/InputCounter";
 
 export function Details() {
   const [data, setData] = useState(null);
@@ -35,13 +34,10 @@ export function Details() {
 
   return (
     <Container>
-      <HeaderDesktop/>
-      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
-      <Menu
+      <Header
         menuIsOpen={menuIsOpen}
         onCloseMenu={() => setMenuIsOpen(false)}
-        id="mobileMenu"
-        title={"Sair"}
+        onOpenMenu={() => setMenuIsOpen(true)}
       />
       {data && (
         <main id="mainDetails">

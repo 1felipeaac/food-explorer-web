@@ -16,12 +16,13 @@ import favorite from "../../assets/favorite.svg";
 import edit from "../../assets/edit.svg";
 
 
-export function Slider({ dishes, role }) {
+export function Slider({ title, dishes, role }) {
   function getUrl(url) {
     return `${api.defaults.baseURL}/files/${url}`;
   }
   return (
     <Container>
+      <label>{title}</label>
       <Swiper
         loop={true}
         pagination={false}

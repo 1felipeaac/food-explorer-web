@@ -19,6 +19,15 @@ export function Home() {
   const [visible, setVisible] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  const [mainDishes, setMainDishes] = useState([]);
+  const [desserts, setDesserts] = useState([]);
+  const [drinks, setDrink] = useState([]);
+
+  const arrayMainDishes = []
+  const arrayDesserts = []
+  const arrayDrinks = []
+
+
   const logged = useAuth();
   const role = logged.user.role;
 
@@ -30,9 +39,25 @@ export function Home() {
   }
 
   useEffect(() => {
+    dishes.map(dish => {
+      if (dish.category === "Pratos Principais"){
+        arrayMainDishes.push(dish);
+      }else if(dish.category === "Sobremesas"){
+        arrayDesserts.push(dish);
+      }else{
+        arrayDrinks.push(dish);
+      }
+    })
+    setMainDishes(arrayMainDishes);
+    setDesserts(arrayDesserts);
+    setDrink(arrayDrinks)
+  }, [dishes])
+
+  useEffect(() => {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data.dishes);
+
     }
     setDishesFound([]);
     fetchDishes();
@@ -51,7 +76,6 @@ export function Home() {
           setVisible(false);
         }
       } catch (error) {
-        // console.log(error.response.data.message);
         if(error.response.request.status === 400){
           return 
         }
@@ -70,7 +94,7 @@ export function Home() {
         onOpenMenu={() => setMenuIsOpen(true)}
         onSearch={handleSearch}
       />
-      <main>
+      <main id="mainHome">
         <div id="display">
           <div id="banner"></div>
           <img id="imgHome" src={home} alt="" />
@@ -79,7 +103,13 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </span>
         </div>
-        {visible ? dishes && <Slider dishes={dishes} role={role} /> : <></>}
+        {visible ? dishes && 
+          <>
+            <Slider title={"Pratos Principais"} dishes={mainDishes} role={role}/>
+            <Slider title={"Sobremesas"} dishes={desserts} role={role} />
+            <Slider title={"Bebidas"} dishes={drinks} role={role} />
+          </>
+           : <></>}
 
         {errorCheck ? (
           <div id="errorMessage">{messageError}</div>

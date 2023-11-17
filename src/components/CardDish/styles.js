@@ -34,8 +34,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 11rem;
-    width: 100%;
+    /* max-width: 11rem; */
+    /* width: 100%; */
     span {
       display: flex;
       flex-direction: column;

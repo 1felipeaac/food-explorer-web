@@ -16,7 +16,7 @@ export const Container = styled.div`
 
     padding: 3.6rem 2.8rem;
 
-    margin-top: 7.5rem;
+    margin-top: 10.5rem;
     margin-bottom: 5rem;
     width: 100%;
 

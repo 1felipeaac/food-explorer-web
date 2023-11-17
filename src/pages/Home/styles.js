@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   --banner-height: 16rem;
 
-  main {
+  #mainHome {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,20 +53,6 @@ export const Container = styled.div`
         > p {
           font-weight: 400;
         }
-      }
-    }
-
-    #showDishes {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      gap: 1rem;
-      width: 100%;
-      margin: 3rem 0;
-
-      a {
-        flex-basis: 25%;
       }
     }
 

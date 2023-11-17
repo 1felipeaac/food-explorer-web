@@ -9,6 +9,13 @@ export const Container = styled.div`
   max-width: 70rem;
   margin-top: 5rem;
 
+  label{
+    font-size: 2rem;
+    font-weight: 400;
+
+    margin-bottom: 1.43rem;
+  }
+
 
   .swiper-button-next,
   .swiper-button-prev {
@@ -19,5 +26,12 @@ export const Container = styled.div`
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     width: 80vw;
+
+    label{
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    margin-bottom: 1.43rem;
+    }
   }
 `;

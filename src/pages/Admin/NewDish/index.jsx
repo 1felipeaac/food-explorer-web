@@ -8,15 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 import { Hyperlink } from "../../../components/Hyperlink";
 import { Footer } from "../../../components/Footer";
-import { HeaderDesktop } from "../../../components/Header/Desktop";
-import { HeaderMobile } from "../../../components/Header/Mobile";
+import { Header } from "../../../components/Header";
 import { Container } from "./styles";
 import { Input } from "../../../components/Input";
 import { Select } from "../../../components/Select";
 import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
-import { Menu } from "../../../components/MobileMenu";
 import { ReactSVG } from "react-svg";
 import { useAuth } from "../../../hooks/auth";
 import upload from "../../../assets/upload.svg";
@@ -91,13 +89,10 @@ export function NewDish() {
 
   return (
     <Container>
-      <HeaderDesktop />
-      <HeaderMobile onOpenMenu={() => setMenuIsOpen(true)} />
-      <Menu
+      <Header
         menuIsOpen={menuIsOpen}
         onCloseMenu={() => setMenuIsOpen(false)}
-        id="mobileMenu"
-        title={"Sair"}
+        onOpenMenu={() => setMenuIsOpen(true)}
       />
 
       <div id="formDish">
