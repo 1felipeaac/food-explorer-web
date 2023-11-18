@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 import { api } from "../../../services/api";
-
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../hooks/auth";
 
 import { Hyperlink } from "../../../components/Hyperlink";
 import { Footer } from "../../../components/Footer";
@@ -16,9 +16,8 @@ import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
 import { ReactSVG } from "react-svg";
-import { useAuth } from "../../../hooks/auth";
-import upload from "../../../assets/upload.svg";
 
+import upload from "../../../assets/upload.svg";
 import arrowLeft from "../../../assets/arrowLeft.svg";
 
 export function NewDish() {

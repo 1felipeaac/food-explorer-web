@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import { api } from "../../../services/api";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { Hyperlink } from "../../../components/Hyperlink";
 import { Footer } from "../../../components/Footer";
@@ -14,7 +14,6 @@ import { Select } from "../../../components/Select";
 import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
-import { useParams } from "react-router-dom";
 
 import upload from "../../../assets/upload.svg";
 

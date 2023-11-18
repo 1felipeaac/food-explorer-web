@@ -1,19 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import { Hyperlink } from "../../components/Hyperlink";
 import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { Container } from "./styles";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { api } from "../../services/api";
 import { ReactSVG } from "react-svg";
 import { Tags } from "../../components/Tags";
 import {Header} from "../../components/Header";
+import { InputCounter } from "../../components/InputCounter";
+import { api } from "../../services/api";
+import { useParams } from "react-router-dom";
 import empty from "../../assets/default-dish.svg";
 import back from "../../assets/arrowLeft.svg";
 
 import {useAuth} from '../../hooks/auth'
-import { InputCounter } from "../../components/InputCounter";
 
 export function Details() {
   const [data, setData] = useState(null);
