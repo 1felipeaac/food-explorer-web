@@ -26,7 +26,7 @@ Aplicação feita usando React+Vite
     |              | { Input }     |             |        |              |
     |              | { Logo }      |             |        |              |
     |              | { Container } |             |        |              |
-
+    [📒](#funcionamento)
 2.  > <h3 id="signup">SignUp</h3>
 
     | hooks        | componentes   | funções         | assets | dependências |
@@ -36,6 +36,7 @@ Aplicação feita usando React+Vite
     |              | { Input }     | { useNavigate } |        |              |
     |              | { Logo }      |                 |        |              |
     |              | { Container } |                 |        |              |
+    [📒](#funcionamento)
 
 3.  > <h3 id="home">Home</h3>
 
@@ -45,6 +46,7 @@ Aplicação feita usando React+Vite
     | { useState } | { Footer }    | { api }     |        |              |
     |              | { Slider }    |             |        |              |
     |              | { Container } |             |        |              |
+    [📒](#funcionamento)
 
 4.  > <h3 id="details">Details</h3>
 
@@ -58,6 +60,7 @@ Aplicação feita usando React+Vite
     |              | { InputCounter } |               |        |                   |
     |              | { Hyperlink }    |               |        |                   |
     |              | { Footer }       |               |        |                   |
+    [📒](#funcionamento)
 
 5.  > <h3 id="newdish">NewDish</h3>
 
@@ -73,6 +76,7 @@ Aplicação feita usando React+Vite
     |              | { Textarea }    |                 |           |                   |
     |              | { Input }       |                 |           |                   |
     |              | { Footer }      |                 |           |                   |
+    [📒](#funcionamento)
 
 6.  > <h3 id="editdish">EditDish</h3>
 
@@ -88,6 +92,7 @@ Aplicação feita usando React+Vite
     |               | { Textarea }    |                 |           |                   |
     |               | { Input }       |                 |           |                   |
     |               | { Footer }      |                 |           |                   |
+    [📒](#funcionamento)
 
 7. > <h3 id="notfound">NotFound</h3>
 
@@ -95,6 +100,7 @@ Aplicação feita usando React+Vite
     | ------------- | --------------- | --------------- | --------- | ----------------- |
     |               | { Link }        |                 |           | `npm i react-router-dom` |
     |               | { Container }   |  |           |                   |
+    [📒](#funcionamento)
 
 - ## Componentes:
 
@@ -107,7 +113,7 @@ Aplicação feita usando React+Vite
     | { icon }    |               |                          |        |              |
     | {toPage}    |               |                          |        |              |
     | { ...rest } |               |                          |        |              |
-
+    [📒](#funcionamento)
 2.  > <h3 id="card">CardDish</h3>
 
     | props           | componentes      | funções                  | assets | dependências |
@@ -119,14 +125,14 @@ Aplicação feita usando React+Vite
     | { icon }        | {Link}           |                          |        |`npm i react-router-dom`|
     | { description } |                  |                          |        |              |
     | { className }   |                  |                          |        |              |
-
+    [📒](#funcionamento)
 3.  > <h3 id="footer">Footer</h3>
 
     | props | componentes   | funções | assets | dependências |
     | ----- | ------------- | ------- | ------ | ------------ |
     |       | { Logo }      |         |        |              |
     |       | { Container } |         |        |              |
-
+    [📒](#funcionamento)
 4.  > <h3 id="header">Header</h3>
 
     | props           | componentes       | funções | assets | dependências |
@@ -135,7 +141,7 @@ Aplicação feita usando React+Vite
     | { onOpenMenu }  | { HeaderMobile }  |         |        |              |
     | { onCloseMenu } | { Menu }          |         |        |              |
     | {menuIsOpen}    |                   |         |        |              |
-
+    [📒](#funcionamento)
 5.  > <h3 id="hdesktop">HeaderDesktop</h3>
 
     | props        | componentes   | funções     | assets      | dependências |
@@ -144,7 +150,7 @@ Aplicação feita usando React+Vite
     |              | { Logo }      |             | iconReceipt |              |
     |              | { Search }    |             |             |              |
     |              | { Button }    |             |             |              |
-
+    [📒](#funcionamento)
 6.  > <h3 id="hmobile">HeaderMobile</h3>
 
     | props          | componentes   | funções     | assets  | dependências |
@@ -152,8 +158,7 @@ Aplicação feita usando React+Vite
     | { onOpenMenu } | { Container } | { useAuth } | menu    |              |
     |                | { Logo }      |             | receipt |              |
     |                | { Buttons }   |             |         |              |
-    |                |               |             |         |              |
-
+    [📒](#funcionamento)
 7.  > <h3 id="hyperlink">Hyperlink</h3>
 
     | props       | componentes   | funções | assets | dependências |
@@ -162,7 +167,7 @@ Aplicação feita usando React+Vite
     | { icon }    |               |         |        |              |
     | { to }      |               |         |        |              |
     | { onClick } |               |         |        |              |
-
+    [📒](#funcionamento)
 8.  > <h3 id="ingredients">Ingredients</h3>
 
     | props       | componentes   | funções | assets | dependências      |
@@ -171,7 +176,7 @@ Aplicação feita usando React+Vite
     | { value }   | { ReactSVG }  |         | close  | `npm i react-svg` |
     | { onClick } |               |         |        |                   |
     | { ...rest } |               |         |        |                   |
-
+    [📒](#funcionamento)
 9.  > <h3 id="input">Input</h3>
 
     | props           | componentes   | funções | assets | dependências |
@@ -185,20 +190,19 @@ Aplicação feita usando React+Vite
     | { icon }        |               |         |        |              |
     | { required }    |               |         |        |              |
     | { ...rest }     |               |         |        |              |
-
+    [📒](#funcionamento)
 10. > <h3 id="icounter">inputCounter</h3>
 
     | props | componentes   | funções   | assets | dependências | hooks        |
     | ----- | ------------- | --------- | ------ | ------------ | ------------ |
     |       | { Container } | increment | minun  |              | { useState } |
     |       |               | decrement | plus   |              |              |
-
+    [📒](#funcionamento)
 11. > <h3 id="logo">Logo</h3>
 
     | props | componentes   | funções | assets  | dependências | hooks |
     | ----- | ------------- | ------- | ------- | ------------ | ----- |
     | role  | { Container } |         | polygon |              |       |
-    |       |               |         |         |              |       |
 
 12. > <h3 id="menu">Menu</h3>
 
@@ -210,7 +214,7 @@ Aplicação feita usando React+Vite
     | {onCloseMenu} | { Link }      |                 |             |                          |       |
     |               | { Search }    |                 |             |                          |       |
     |               | { Hyperlink } |                 |             |                          |       |
-
+    [📒](#funcionamento)
 13. <h3 id="search">Search</h3>
 
     | props      | componentes     | funções     | assets     | dependências | hooks |
@@ -221,14 +225,14 @@ Aplicação feita usando React+Vite
     |            | { Link }        |             |            |              |       |
     |            | { Search }      |             |            |              |       |
     |            | { Hyperlink }   |             |            |              |       |
-
+    [📒](#funcionamento)
 14. > <h3 id="select">Select</h3>
 
     | props      | componentes   | funções | assets | dependências | hooks |
     | ---------- | ------------- | ------- | ------ | ------------ | ----- |
     | {onChange} | { Container } |         |        |              |       |
     | {...rest}  |               |         |        |              |       |
-
+    [📒](#funcionamento)
 15. > <h3 id="slider">Slider</h3>
 
     | props    | componentes   | funções | assets   | dependências         | hooks |
@@ -239,14 +243,13 @@ Aplicação feita usando React+Vite
     |          | {Pagination}  |         |          | `npm install swiper` |       |
     |          | {Navigation}  |         |          | `npm install swiper` |       |
     |          | {CardDish}    |         |          |                      |       |
-    |          | {SwiperSlide} |         |          |                      |       |
-
+    [📒](#funcionamento)
 16. > <h3 id="tags">Tags</h3>
 
     | props  | componentes   | funções | assets | dependências | hooks |
     | ------ | ------------- | ------- | ------ | ------------ | ----- |
     | {name} | { Container } |         |        |              |       |
-
+    [📒](#funcionamento)
 17. > <h3 id="textarea">Textarea</h3>
 
     | props         | componentes   | funções | assets | dependências | hooks |
@@ -255,7 +258,7 @@ Aplicação feita usando React+Vite
     | {placeholder} |               |         |        |              |       |
     | {onChange}    |               |         |        |              |       |
     | {...rest}     |               |         |        |              |       |
-
+    [📒](#funcionamento)
 
 - ## Estilos:
     
@@ -304,7 +307,7 @@ Aplicação feita usando React+Vite
     
 
 
-# Funcionamento
+<H1 id="funcionamento">Funcionamento 📒</H1>
 
 <div style="text-align: justify">
 O arquivo main.jsx, é o responsável por renderizar toda a aplicação. No centro desse arquivo existe &lt;Routes/&gt;, que tem o propósito de organizar o caminho a ser percorrido de acordo com as regras de acesso, verifica se existe usuário logado, caso não exista, direciona para  &lt;AuthRoutes/&gt; onde o usuário pode entrar ou se cadastrar. Existindo, seu caminho é direcionado de acordo com sua role (perfil de usuário) através da função AccessRoute(), podendo ir para  &lt;AdminRoutes/&gt; ou  &lt;CostumerRoutes/&gt;. O  &lt;Routes/&gt; é gerenciado no index.jsx da pasta routes e seu retorno está envolvido pelo &lt;BrowserRouter/&gt; que simplifica a execução e navegação, uma vez que utiliza o principio SPA.
