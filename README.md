@@ -1,21 +1,27 @@
-Trilha Explorer - Desafio Final
+# Sobre o Projeto
+Este projeto é frontend o Desafil Final da trilha Explorer da 🚀[Rocketseat](https://www.rocketseat.com.br/)
 
-Author: Felipe Augusto de Araujo Coelho
+👨🏽‍💻 Author: Felipe Augusto de Araujo Coelho
+
 Layout Figma: https://www.figma.com/community/file/1196874589259687769/food-explorer-v2
-Deploy:
-Dependências:
-Axios
-Styled Components
-React
-Swiper
 
-Conceito Mobile First
+Deploy: https://webfoodexplorer.netlify.app
 
-Aplicação feita usando React+Vite
+Website (React + vite + javascript)
+
+Tecnologias:
+
+    ✔️ axios
+    ✔️ react
+    ✔️ react-dom
+    ✔️ react-router-dom
+    ✔️ react-svg
+    ✔️ styled-components
+    ✔️ swiper
 
 # Estrutura do Projeto
 
-- ## Páginas:
+- ## 🌐 Páginas:
 
 1.  > <h3 id="signin">SignIn</h3>
 
@@ -102,7 +108,7 @@ Aplicação feita usando React+Vite
     |               | { Container }   |  |           |                   |
     [📒](#funcionamento)
 
-- ## Componentes:
+- ## 📅 Componentes:
 
 1.  > <h3 id="button">Button</h3>
 
@@ -203,7 +209,6 @@ Aplicação feita usando React+Vite
     | props | componentes   | funções | assets  | dependências | hooks |
     | ----- | ------------- | ------- | ------- | ------------ | ----- |
     | role  | { Container } |         | polygon |              |       |
-
 12. > <h3 id="menu">Menu</h3>
 
     | props         | componentes   | funções         | assets      | dependências             | hooks |
@@ -260,14 +265,14 @@ Aplicação feita usando React+Vite
     | {...rest}     |               |         |        |              |       |
     [📒](#funcionamento)
 
-- ## Estilos:
+- ## 💈Estilos:
     
     + devideBreakPoints.js;
     + global.js | `npm install styled-components`;
     + theme.js.
     
 
-- ## Rotas:
+- ## 🔀 Rotas:
     
     + admin.routes.jsx;
     + auth.routes.jsx;
@@ -275,20 +280,20 @@ Aplicação feita usando React+Vite
     + index.jsx.
     
 
-- ## Service:
+- ## 🧰 Service:
     
     + api.js.
     
-- ## Hooks:
+- ## 🔗 Hooks:
     
     + auth.jsx.
     
-- ## Utils:
+- ## 🔧 Utils:
     
     + roles.js.
     
 
-- ## Assets:
+- ## 🖼️ Assets:
     
     + arrowLeft.svg;
     + close.svg; 
@@ -307,7 +312,7 @@ Aplicação feita usando React+Vite
     
 
 
-<H1 id="funcionamento">Funcionamento 📒</H1>
+<H1 id="funcionamento">📒 Funcionamento</H1>
 
 <div style="text-align: justify">
 O arquivo main.jsx, é o responsável por renderizar toda a aplicação. No centro desse arquivo existe &lt;Routes/&gt;, que tem o propósito de organizar o caminho a ser percorrido de acordo com as regras de acesso, verifica se existe usuário logado, caso não exista, direciona para  &lt;AuthRoutes/&gt; onde o usuário pode entrar ou se cadastrar. Existindo, seu caminho é direcionado de acordo com sua role (perfil de usuário) através da função AccessRoute(), podendo ir para  &lt;AdminRoutes/&gt; ou  &lt;CostumerRoutes/&gt;. O  &lt;Routes/&gt; é gerenciado no index.jsx da pasta routes e seu retorno está envolvido pelo &lt;BrowserRouter/&gt; que simplifica a execução e navegação, uma vez que utiliza o principio SPA.
@@ -346,3 +351,18 @@ A página [&lt;NewDish&gt;](#newdish) utiliza os hooks useState para guadar os e
 Por fim, a página [&lt;NotFound&gt;](#notfound) exibida sempre que o usuário tenta acessar uma rota inexisten.
 
 </div>
+
+# ▶️ Como Executar
+
+No seu Terminal
+
+````javascript
+git clone https://github.com/1felipeaac/food-explorer-web
+````
+Na pasta onde o projeto foi clonado
+````javascript
+npm install
+````
+````javascript
+npm run dev
+````
