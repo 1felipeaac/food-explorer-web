@@ -3,14 +3,15 @@
 /* eslint-disable react/jsx-no-undef */
 import { Container, Header } from "./styles";
 import { Footer } from "../Footer";
-import buttonClose from "../../assets/close.svg";
 import { Link } from "react-router-dom";
 import { Search } from "../Search";
-import { useAuth } from "../../hooks/auth";
-import { useNavigate } from "react-router-dom";
 import { Hyperlink } from "../Hyperlink";
 
+import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+
+import buttonClose from "../../assets/close.svg";
 
 export function Menu({ onSearch, id, menuIsOpen, onCloseMenu }) {
   const { signOut } = useAuth();

@@ -2,12 +2,12 @@ Trilha Explorer - Desafio Final
 
 Author: Felipe Augusto de Araujo Coelho
 Layout Figma: https://www.figma.com/community/file/1196874589259687769/food-explorer-v2
-Deploy: 
+Deploy:
 Dependências:
-    Axios
-    Styled Components
-    React
-    Swiper
+Axios
+Styled Components
+React
+Swiper
 
 Conceito Mobile First
 
@@ -15,177 +15,249 @@ Aplicação feita usando React+Vite
 
 # Estrutura do Projeto
 
-## 6 páginas:
+- ## Páginas:
+
 1.  > **SignIn**:
-	
-    hooks:
-    ```javascript
-    import { useState } from "react";
-    ```
-    componentes:
-    ```javascript
-    import { Hyperlink } from "../../components/Hyperlink";
-    import { Button } from "../../components/Button";
-    import { Input } from "../../components/Input";
-    import { Logo } from "../../components/Logo";
-    import { Container } from "./styles";
-    ```
-    funções:
-    ```javascript
-    import { useAuth } from "../../hooks/auth"
-    ```
-2. > **SignUp**:
 
-    hooks:
-    ```javascript
-    import { useState } from "react";
-    ```
-    componentes:
-    ```javascript
-    import { Hyperlink } from "../../components/Hyperlink"
-    import { Button } from "../../components/Button"
-    import { Input } from "../../components/Input"
-    import { Logo } from "../../components/Logo"
-    import { Container } from "./styles"
-    ```
-    funções:
-    ```javascript
-    import { useNavigate } from "react-router-dom";
-    import {api} from '../../services/api';
-    ```
-3. > **Home**:
+    | hooks        | componentes   | funções     | assets | dependências |
+    | ------------ | ------------- | ----------- | ------ | ------------ |
+    | { useState } | { Hyperlink } | { useAuth } |        |              |
+    |              | { Button }    |             |        |              |
+    |              | { Input }     |             |        |              |
+    |              | { Logo }      |             |        |              |
+    |              | { Container } |             |        |              |
 
-    hooks:
-    ```javascript
-    import { useEffect, useState } from "react";
-    ```
-    componentes:
-    ```javascript
-    import { Header } from "../../components/Header";
-    import { Footer } from "../../components/Footer";
-    import { Container } from "./styles";
-    import { Slider } from "../../components/Slider";
-    ```
+2.  > **SignUp**:
 
-    funções:
-    ```javascript
-    import { api } from "../../services/api";
-    import { useAuth } from "../../hooks/auth";
-    ```
-    assets:
-    ```javascript
-    import home from "../../assets/homeImg.svg";
-    ```
-4. > **Details**:
+    | hooks        | componentes   | funções         | assets | dependências |
+    | ------------ | ------------- | --------------- | ------ | ------------ |
+    | { useState } | { Hyperlink } | { useAuth }     |        |              |
+    |              | { Button }    | { api }         |        |              |
+    |              | { Input }     | { useNavigate } |        |              |
+    |              | { Logo }      |                 |        |              |
+    |              | { Container } |                 |        |              |
 
-    hooks:
-    ```javascript
-    import { useEffect, useState } from "react";
-    ```
-    componentes:
-    ```javascript
-    import { Hyperlink } from "../../components/Hyperlink";
-    import { Footer } from "../../components/Footer";
-    import { Button } from "../../components/Button";
-    import { Container } from "./styles";
-    import { ReactSVG } from "react-svg";
-    import { Tags } from "../../components/Tags";
-    import {Header} from "../../components/Header";
-    import { InputCounter } from "../../components/InputCounter";
-    ```
-    funções:
-    ```javascript
-    import { api } from "../../services/api";
-    import { useParams } from "react-router-dom";
-    import {useAuth} from '../../hooks/auth'
-    ```
-    assets:
-    ```javascript
-    import empty from "../../assets/default-dish.svg";
-    import back from "../../assets/arrowLeft.svg";
-    ```
-5. > **NewDish**:
+3.  > **Home**:
 
-    hooks:
-    ```javascript
-    import { useState } from "react";
-    ```
-    componentes:
-    ```javascript
-    import { Hyperlink } from "../../../components/Hyperlink";
-    import { Footer } from "../../../components/Footer";
-    import { Header } from "../../../components/Header";
-    import { Container } from "./styles";
-    import { Input } from "../../../components/Input";
-    import { Select } from "../../../components/Select";
-    import { Textarea } from "../../../components/Textarea";
-    import { Button } from "../../../components/Button";
-    import { Ingredients } from "../../../components/Ingredients";
-    import { ReactSVG } from "react-svg";
-    ```
-    funções:
-    ```javascript
-    import { api } from "../../../services/api";
-    import { useNavigate } from "react-router-dom";
-    import { useAuth } from "../../../hooks/auth";
-    ```
-    assets:
-    ```javascript
-    import upload from "../../../assets/upload.svg";
-    import arrowLeft from "../../../assets/arrowLeft.svg";
-    ```
-6. > **EditDish**:
+    | hooks        | componentes   | funções     | assets | dependências |
+    | ------------ | ------------- | ----------- | ------ | ------------ |
+    | { useEffect} | { Header }    | { useAuth } | home   |              |
+    | { useState } | { Footer }    | { api }     |        |              |
+    |              | { Slider }    |             |        |              |
+    |              | { Container } |             |        |              |
 
-    hooks:
-    ```javascript
-    import { useState, useEffect } from "react";
-    ```
-    componentes:
-    ```javascript
-    import { Hyperlink } from "../../../components/Hyperlink";
-    import { Footer } from "../../../components/Footer";
-    import { Header } from "../../../components/Header";
-    import { Container } from "./styles";
-    import { Input } from "../../../components/Input";
-    import { Select } from "../../../components/Select";
-    import { Textarea } from "../../../components/Textarea";
-    import { Button } from "../../../components/Button";
-    import { Ingredients } from "../../../components/Ingredients";
-    ```
-    funções:
-    ```javascript
-    import { api } from "../../../services/api";
-    import { useNavigate, useParams } from "react-router-dom";
-    ```
-    assets:
-    ```javascript
-    import upload from "../../../assets/upload.svg";
-    import arrowLeft from "../../../assets/arrowLeft.svg";
-    ```
-- contem 17 Components
-    Button
-    Cardish
-    Footer
-    Header
-        Desktop
-        Mobile
-    Hyperlink
-    Ingredients
-    input
-    InputCounter
-    Logo
-    MobileMenu
-    Search
-    Select
-    Slider
+4.  > **Details**:
+
+    | hooks        | componentes      | funções       | assets | dependências      |
+    | ------------ | ---------------- | ------------- | ------ | ----------------- |
+    | { useEffect} | { Header }       | { api }       | empty  |                   |
+    | { useState } | { Button }       | { useAuth }   | back   |                   |
+    |              | { Container }    | { useParams } |        |                   |
+    |              | { ReactSVG }     |               |        | `npm i react-svg` |
+    |              | { Tags }         |               |        |                   |
+    |              | { InputCounter } |               |        |                   |
+    |              | { Hyperlink }    |               |        |                   |
+    |              | { Footer }       |               |        |                   |
+
+5.  > **NewDish**:
+
+    | hooks        | componentes     | funções         | assets    | dependências      |
+    | ------------ | --------------- | --------------- | --------- | ----------------- |
+    | { useState } | { Header }      | { api }         | upload    |                   |
+    |              | { Button }      | { useNavigate } | arrowLeft |                   |
+    |              | { Container }   |                 |           |                   |
+    |              | { ReactSVG }    |                 |           | `npm i react-svg` |
+    |              | { Select }      |                 |           |                   |
+    |              | { Hyperlink }   |                 |           |                   |
+    |              | { Ingredients } |                 |           |                   |
+    |              | { Textarea }    |                 |           |                   |
+    |              | { Input }       |                 |           |                   |
+    |              | { Footer }      |                 |           |                   |
+
+6.  > **EditDish**:
+
+    | hooks         | componentes     | funções         | assets    | dependências      |
+    | ------------- | --------------- | --------------- | --------- | ----------------- |
+    | { useState}   | { Header }      | { api }         | upload    |                   |
+    | { useEffect } | { Button }      | { useParams }   | arrowLeft |                   |
+    |               | { Container }   | { useNavigate } |           |                   |
+    |               | { ReactSVG }    |                 |           | `npm i react-svg` |
+    |               | { Select }      |                 |           |                   |
+    |               | { Hyperlink }   |                 |           |                   |
+    |               | { Ingredients } |                 |           |                   |
+    |               | { Textarea }    |                 |           |                   |
+    |               | { Input }       |                 |           |                   |
+    |               | { Footer }      |                 |           |                   |
+
+- ## Componentes:
+
+1.  > **Button**:
+
+    | props       | componentes   | funções                  | assets | dependências |
+    | ----------- | ------------- | ------------------------ | ------ | ------------ |
+    | { title }   | { Container } |                          |        |              |
+    | { id }      | { Link }      | `npm i react-router-dom` |        |              |
+    | { icon }    |               |                          |        |              |
+    | {toPage}    |               |                          |        |              |
+    | { ...rest } |               |                          |        |              |
+
+2.  > **CardDish**:
+
+    | props           | componentes      | funções                  | assets | dependências |
+    | --------------- | ---------------- | ------------------------ | ------ | ------------ |
+    | { to }          | { Button }       |                          |        |              |
+    | { name }        | { InputCounter } |                          |        |              |
+    | { price }       | {Container}      |                          |        |              |
+    | {src}           | {ReactSVG}       | `npm i react-svg`        |        |              |
+    | { icon }        | {Link}           | `npm i react-router-dom` |        |              |
+    | { description } |                  |                          |        |              |
+    | { className }   |                  |                          |        |              |
+
+3.  > **Footer**:
+
+    | props | componentes   | funções | assets | dependências |
+    | ----- | ------------- | ------- | ------ | ------------ |
+    |       | { Logo }      |         |        |              |
+    |       | { Container } |         |        |              |
+
+4.  > **Header**:
+
+    | props           | componentes       | funções | assets | dependências |
+    | --------------- | ----------------- | ------- | ------ | ------------ |
+    | { onSearch }    | { HeaderDesktop } |         |        |              |
+    | { onOpenMenu }  | { HeaderMobile }  |         |        |              |
+    | { onCloseMenu } | { Menu }          |         |        |              |
+    | {menuIsOpen}    |                   |         |        |              |
+
+5.  > **HeaderDesktop**:
+
+    | props        | componentes   | funções     | assets      | dependências |
+    | ------------ | ------------- | ----------- | ----------- | ------------ |
+    | { onSearch } | { Container } | { useAuth } | exit        |              |
+    |              | { Logo }      |             | iconReceipt |              |
+    |              | { Search }    |             |             |              |
+    |              | { Button }    |             |             |              |
+
+6.  > **HeaderMobile**:
+
+    | props          | componentes   | funções     | assets  | dependências |
+    | -------------- | ------------- | ----------- | ------- | ------------ |
+    | { onOpenMenu } | { Container } | { useAuth } | menu    |              |
+    |                | { Logo }      |             | receipt |              |
+    |                | { Buttons }   |             |         |              |
+    |                |               |             |         |              |
+
+7.  > **Hyperlink**:
+
+    | props       | componentes   | funções | assets | dependências |
+    | ----------- | ------------- | ------- | ------ | ------------ |
+    | { title }   | { Container } |         |        |              |
+    | { icon }    |               |         |        |              |
+    | { to }      |               |         |        |              |
+    | { onClick } |               |         |        |              |
+
+8.  > **Ingredients**:
+
+    | props       | componentes   | funções | assets | dependências      |
+    | ----------- | ------------- | ------- | ------ | ----------------- |
+    | { isNew }   | { Container } |         | plus   |                   |
+    | { value }   | { ReactSVG }  |         | close  | `npm i react-svg` |
+    | { onClick } |               |         |        |                   |
+    | { ...rest } |               |         |        |                   |
+
+9.  > **Input**:
+
+    | props           | componentes   | funções | assets | dependências |
+    | --------------- | ------------- | ------- | ------ | ------------ |
+    | { idContainer } | { Container } |         |        |              |
+    | { title }       |               |         |        |              |
+    | { placeholder } |               |         |        |              |
+    | { id }          |               |         |        |              |
+    | { type }        |               |         |        |              |
+    | { onChange }    |               |         |        |              |
+    | { icon }        |               |         |        |              |
+    | { required }    |               |         |        |              |
+    | { ...rest }     |               |         |        |              |
+
+10. > **InputCounter**:
+
+    | props | componentes   | funções   | assets | dependências | hooks        |
+    | ----- | ------------- | --------- | ------ | ------------ | ------------ |
+    |       | { Container } | increment | minun  |              | { useState } |
+    |       |               | decrement | plus   |              |              |
+
+11. > **Logo**:
+
+    | props | componentes   | funções | assets  | dependências | hooks |
+    | ----- | ------------- | ------- | ------- | ------------ | ----- |
+    | role  | { Container } |         | polygon |              |       |
+    |       |               |         |         |              |       |
+
+12. > **Menu**:
+
+    | props         | componentes   | funções         | assets      | dependências             | hooks |
+    | ------------- | ------------- | --------------- | ----------- | ------------------------ | ----- |
+    | {onSearch}    | { Container } | { useAuth }     | buttonClose |                          |       |
+    | {id}          | { Header }    | { useNavigate } |             | `npm i react-router-dom` |       |
+    | {menuIsOpen}  | { Footer }    | { useLocation } |             | `npm i react-router-dom` |       |
+    | {onCloseMenu} | { Link }      |                 |             |                          |       |
+    |               | { Search }    |                 |             |                          |       |
+    |               | { Hyperlink } |                 |             |                          |       |
+
+13. > **Search**:
+
+    | props      | componentes     | funções     | assets     | dependências | hooks |
+    | ---------- | --------------- | ----------- | ---------- | ------------ | ----- |
+    | {onSearch} | { Container }   | { useAuth } | iconSearch |              |       |
+    |            | { InputSearch } |             |            |              |       |
+    |            | { Footer }      |             |            |              |       |
+    |            | { Link }        |             |            |              |       |
+    |            | { Search }      |             |            |              |       |
+    |            | { Hyperlink }   |             |            |              |       |
+
+14. > **Select**:
+
+    | props      | componentes   | funções | assets | dependências | hooks |
+    | ---------- | ------------- | ------- | ------ | ------------ | ----- |
+    | {onChange} | { Container } |         |        |              |       |
+    | {...rest}  |               |         |        |              |       |
+
+15. > **Slider**:
+
+    | props    | componentes   | funções | assets   | dependências         | hooks |
+    | -------- | ------------- | ------- | -------- | -------------------- | ----- |
+    | {title}  | { Container } | {api}   | empty    |                      |       |
+    | {dishes} | {Swiper}      |         | favorite | `npm install swiper` |       |
+    | {role}   | {SwiperSlide} |         | edit     | `npm install swiper` |       |
+    |          | {Pagination}  |         |          | `npm install swiper` |       |
+    |          | {Navigation}  |         |          | `npm install swiper` |       |
+    |          | {CardDish}    |         |          |                      |       |
+    |          | {SwiperSlide} |         |          |                      |       |
+
     Tags
     Textarea
-contem 3 rotas
-    admin.routes
-    auth.routes
-    costumer.routes
 
-contem 3 components de estilo
+        contem 3 rotas
+        admin.routes
+        auth.routes
+        costumer.routes
+
+16. > **Tags**:
+
+    | props  | componentes   | funções | assets | dependências | hooks |
+    | ------ | ------------- | ------- | ------ | ------------ | ----- |
+    | {name} | { Container } |         |        |              |       |
+
+17. > **Textarea**:
+
+    | props         | componentes   | funções | assets | dependências | hooks |
+    | ------------- | ------------- | ------- | ------ | ------------ | ----- |
+    | {id}          | { Container } |         |        |              |       |
+    | {placeholder} |               |         |        |              |       |
+    | {onChange}    |               |         |        |              |       |
+    | {...rest}     |               |         |        |              |       |
+
+    contem 3 components de estilo
     devideBreakPoints
     global
     theme
@@ -197,20 +269,20 @@ contem 1 hook
 contem 1 utils
 
 contem 15 elementos svg
-    arrowLeft
-    close
-    default-NewDishedit
-    exit
-    favorite
-    homeImg
-    mobile
-    minun
-    plus
-    polygon
-    react
-    receipt
-    search
-    upload
+arrowLeft
+close
+default-NewDishedit
+exit
+favorite
+homeImg
+mobile
+minun
+plus
+polygon
+react
+receipt
+search
+upload
 
 ### Funcionamento
 
@@ -237,7 +309,7 @@ Além desses componentes, a página tem um banner de apresentação, com uma art
 
 A visualização dos pratos se dá através dos componentes <Slider>[props: dishes, role; componentes: <Swiper> (npm install swiper), <SwiperSlide> e <Cardish>], que são renderizados somente se houver resultados nas buscas dos hooks useEffect, que fazem requisição ao banco através da rota get('/dishes'), para exibição fixa e da rota get('/dishes?name=${searchValue}'), responsável pela busca de pratos especificos, caso a busca seja rendezidada a exibição fixa é "escondida" controlada por um useState (visible) e retorna quando a busca é finalizada (input vazio).
 
-O componente <CardDish> [props: icon, name, price, desctiption, to, src; elementos: <ReactSVG> (npm install react-svg), <Link> (react-router-dom), <img>, <span>, <InputCounter> [props: ; elementos: <button>, <span>] e <Button>], renderiza os dados dos pratos  (imagem, nome, preço, descrição) e direciona para página <Details> [props: ; elementos: <Header>, <Hyperlink>, <ReactSVG>, <Tags> [props: name; elementos: ]], <Button>, <InputCounter>, <Footer> pela props 'to={`details/${dish.id}`}'.
+O componente <CardDish> [props: icon, name, price, desctiption, to, src; elementos: <ReactSVG> (npm install react-svg), <Link> (react-router-dom), <img>, <span>, <InputCounter> [props: ; elementos: <button>, <span>] e <Button>], renderiza os dados dos pratos (imagem, nome, preço, descrição) e direciona para página <Details> [props: ; elementos: <Header>, <Hyperlink>, <ReactSVG>, <Tags> [props: name; elementos: ]], <Button>, <InputCounter>, <Footer> pela props 'to={`details/${dish.id}`}'.
 
 Depenendo da role do usuário, alguns elementos são exibidos, desctiption para 'admin' e <InputCounter> com <Button> para 'costumer'.
 
@@ -252,9 +324,3 @@ A página <NewDish> utiliza os hooks useState para guadar os estados dos valores
 <EditDish>, quando carregada, preenche automáticamente o formulário com os dados correspondentes ao id, o id também vem através dos parâmetros da URL, o usuário edita os dados que julgar necessário e salva no banco.
 
 Por fim, a página <NotFound>[props: ; elementos: <h1> e <Link>] é exibida sempre que o usuário tenta acessar uma rota inexisten.
-
-
-
-
-
-

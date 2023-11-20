@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Container } from "./styles";
 import { Logo } from "../../Logo";
-import exit from "../../../assets/exit.svg";
 import { Search } from "../../Search";
 import { Button } from "../../Button";
 
+import exit from "../../../assets/exit.svg";
 import { useAuth } from "../../../hooks/auth";
 
 export function HeaderDesktop({onSearch}) {

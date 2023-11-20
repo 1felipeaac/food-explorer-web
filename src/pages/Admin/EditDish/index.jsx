@@ -14,6 +14,7 @@ import { Select } from "../../../components/Select";
 import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
 import { Ingredients } from "../../../components/Ingredients";
+import { ReactSVG } from "react-svg";
 
 import upload from "../../../assets/upload.svg";
 
@@ -112,7 +113,6 @@ export function EditDish() {
       setValue(dish.value);
       setImage(dish.image);
       setIngredients(dish.ingredients.map((ingredient) => ingredient));
-
     }
     fetchDish();
   }, []);

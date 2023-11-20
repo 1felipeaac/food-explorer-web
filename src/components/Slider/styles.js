@@ -14,6 +14,7 @@ export const Container = styled.div`
     font-weight: 400;
 
     margin-bottom: 1.43rem;
+    margin-left: 3.5rem;
   }
 
 
@@ -32,6 +33,8 @@ export const Container = styled.div`
     font-weight: 400;
 
     margin-bottom: 1.43rem;
+    margin-left: 0;
+
     }
   }
 `;

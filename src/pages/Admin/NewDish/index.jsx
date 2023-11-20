@@ -4,18 +4,17 @@ import { useState } from "react";
 
 import { api } from "../../../services/api";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../hooks/auth";
 
-import { Hyperlink } from "../../../components/Hyperlink";
-import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
-import { Container } from "./styles";
-import { Input } from "../../../components/Input";
-import { Select } from "../../../components/Select";
-import { Textarea } from "../../../components/Textarea";
 import { Button } from "../../../components/Button";
-import { Ingredients } from "../../../components/Ingredients";
+import { Container } from "./styles";
 import { ReactSVG } from "react-svg";
+import { Select } from "../../../components/Select";
+import { Hyperlink } from "../../../components/Hyperlink";
+import { Ingredients } from "../../../components/Ingredients";
+import { Textarea } from "../../../components/Textarea";
+import { Input } from "../../../components/Input";
+import { Footer } from "../../../components/Footer";
 
 import upload from "../../../assets/upload.svg";
 import arrowLeft from "../../../assets/arrowLeft.svg";
@@ -31,8 +30,6 @@ export function NewDish() {
   const [value, setValue] = useState("");
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const id = useAuth();
 
   const navigate = useNavigate();
 

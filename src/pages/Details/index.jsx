@@ -8,11 +8,12 @@ import { ReactSVG } from "react-svg";
 import { Tags } from "../../components/Tags";
 import {Header} from "../../components/Header";
 import { InputCounter } from "../../components/InputCounter";
-import { api } from "../../services/api";
-import { useParams } from "react-router-dom";
+
 import empty from "../../assets/default-dish.svg";
 import back from "../../assets/arrowLeft.svg";
 
+import { useParams } from "react-router-dom";
+import { api } from "../../services/api";
 import {useAuth} from '../../hooks/auth'
 
 export function Details() {
